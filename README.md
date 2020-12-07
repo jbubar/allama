@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a clone of asana.com! It is also my first full-stack project!
 
 Things you may want to cover:
 
