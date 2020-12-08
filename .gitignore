@@ -19,8 +19,12 @@
 
 /node_modules
 /yarn-error.log
-/bundle.js
-/bundle.js.map
+
+
+bundle.js
+bundle.js.map
+.DS_Store
+npm-debug.log
 
 /public/assets
 .byebug_history
