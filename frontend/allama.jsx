@@ -10,7 +10,17 @@ import * as action from './actions/session_actions';
 //END TESTING
 
 document.addEventListener("DOMContentLoaded", () => {
-    const store = configureStore();
+    let preloadedState = {};
+    if (window.currentUser){
+        preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { currentUserId: window.currentUser.id }
+        }
+    }
+
+    const store = configureStore(preloadedState);
     ReactDOM.render(<Root store={store}/>, document.getElementById('root'))
     
     //TESTING
@@ -20,3 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.action = action
     //END TESTING
 })
+

@@ -19,18 +19,31 @@ export default class SessionForm extends React.Component {
     return this.props.action(this.state);
   }
 
+  renderErrors(){
+    return (
+        <ul>
+            {
+                this.props.errors.session.map((error, i) => (
+                    <li className="error-message" key={`error-${i}`}>
+                        {error}
+                    </li>
+                )) || null
+            }
+        </ul>
+    )
+  }
   renderSignUpFields(){
     if(this.props.formType != "Sign Up") return null;
     return(
         <React.Fragment>
-            <label>Full Name: 
+            <label>Full Name<br/> 
                 <input 
                     type="text" 
                     value={this.state.full_name}
                     onChange={this.handleChange("full_name")}
                 />
             </label>
-            <label>Team ID:
+            <label>Team ID<br/>
                 <input 
                     type="text" 
                     value={this.state.team_id}
@@ -44,7 +57,8 @@ export default class SessionForm extends React.Component {
     return (
         <form onSubmit={this.handleSubmit}>
             <h1>{ this.props.formType }</h1>
-            <label>Email: 
+            {this.renderErrors()}
+            <label>Email<br/>
                 <input 
                     type="text" 
                     value={this.state.email}
@@ -52,7 +66,7 @@ export default class SessionForm extends React.Component {
                 />
             </label>
             { this.renderSignUpFields() }
-            <label>Password:
+            <label>Password<br/>
                 <input 
                     type="password" 
                     value={this.state.password}
