@@ -8,9 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag asset_path('llama.jpg') %>
+
   </head>
 
   <body>
+    <script type="text/javascript">
+      window.errorImgURL = "<%= image_url('404-image.png') %>";
+      window.logoImgURL = "<%= image_url('llama.jpg') %>";
+      window.bigIdeasImgURL = "<%= image_url('big-ideas.png') %>";
+    </script>
     <%= yield %>
   </body>
 </html>
