@@ -6,6 +6,9 @@ const Splash  = () => {
     return (
         <div>
             <SplashNav/>
+            <div>
+                
+            </div>
         </div>
     )
 }

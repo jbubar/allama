@@ -74,6 +74,7 @@ export default class SessionForm extends React.Component {
                 />
             </label>
             <input type="submit" value={ this.props.formType }/>
+            <Link to='/'>Exit</Link>
         </form>
     )
   }
