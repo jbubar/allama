@@ -1,12 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import SplashNav from './splash_nav';
+import SplashNavContainer from './splash_nav_container';
 import { Link } from 'react-router-dom';
 
 const Splash  = () => {
     return (
         <div>
-            <SplashNav/>
+            <SplashNavContainer/>
             <div className='splash-page'>
                 <section className='splash-top-content'>
                     <div className='top-written-content'>

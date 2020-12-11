@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SplashNavContainer from '../splash/splash_nav_container';
 
 export default function ErrorPage() {
     return (
         <div>
+            <SplashNavContainer/>
             <header className='error-page-hero'>
                 <h1>This page is lost in space!</h1>
                 <h3>We can't find what you're looking for, but the links below may help.</h3>

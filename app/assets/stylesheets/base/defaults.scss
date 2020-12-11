@@ -1,7 +1,18 @@
 body {
-    font-family: gordita, Helvetica Neue, Helvetica, sans-serif
+    font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
+    color: #151b26;
+    font-weight: 400;
 }
 a {
     color: #0c0c0c;
     text-decoration: none;
+}
+h1, h2, h3 {
+
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+h1{
+    font-size: 45px;
+    line-height: 1.244;
 }
