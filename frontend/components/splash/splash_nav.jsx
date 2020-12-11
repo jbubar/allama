@@ -7,7 +7,7 @@ export default function SplashNav(props) {
             <Link to='/' className="logo-container">
                 <img src={window.allamaLogoImgURL} alt="a llama logo"/>
             </Link>
-            <a href="mailto: jpbubar@gmail.com" className="nav-link">Contact Josh</a>
+            {/* <a href="mailto: jpbubar@gmail.com" className="nav-link">Contact Josh</a> */}
             {
                 props.currentUser ? (
                     <React.Fragment>

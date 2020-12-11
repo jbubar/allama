@@ -9,6 +9,9 @@ export default class SessionForm extends React.Component {
     this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
+  componentWillUnmount(){
+      this.props.clearErrors()
+  }
   handleChange(field){
     return (e) => {
         this.setState({[field]: e.currentTarget.value});
@@ -17,20 +20,22 @@ export default class SessionForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    return this.props.action(this.state);
+    this.props.action(this.state);
   }
 
   renderErrors(){
     return (
-        <ul>
-            {
-                this.props.errors.session.map((error, i) => (
-                    <li className="error-message" key={`error-${i}`}>
-                        {error}
-                    </li>
-                )) || null
-            }
-        </ul>
+        this.props.errors.session.length > 0 ? (
+            <ul className="error-container">
+                {
+                    this.props.errors.session.map((error, i) => (
+                        <li className="error-message" key={`error-${i}`}>
+                            {error}
+                        </li>
+                    )) || null
+                }
+            </ul>
+        ) : null
     )
   }
   renderSignUpFields(){
@@ -56,7 +61,8 @@ export default class SessionForm extends React.Component {
         </React.Fragment>
     )
   }
-  handleDemoUser(){
+  handleDemoUser(e){
+      e.preventDefault();
       const demoUser = {email: 'octavia@ebutler.com', password: '123456'}
       this.props.formType === "Log In" ? (
           this.props.action(demoUser) ) : ( this.props.login(demoUser))
@@ -98,7 +104,7 @@ export default class SessionForm extends React.Component {
                     />
                 </label>
                 <input type="submit" className="submit-session-btn" value={ this.props.formType }/>
-                <button className="btn-splash btn-nav"onClick={this.handleDemoUser}>Log in as demo User</button>
+                <div className="btn-splash btn-nav demo-user-btn"onClick={this.handleDemoUser}>Log in as demo User</div>
                 {this.linkToOtherSessionForm()}
                 <Link className="exit" to='/'>Exit</Link>
             </form>

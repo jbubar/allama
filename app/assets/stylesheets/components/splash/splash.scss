@@ -60,10 +60,20 @@
             object-fit: none;
             object-position: 50% 50%;
             max-height: 100vh;
+            overflow: show;
         }
 
     }
     @media only screen and (max-width: 768px) {
         flex-direction: column;
+    }
+}
+.error-container{
+    background-color: #ffedef;
+    color: #ff5263;
+    margin: 8px 0;
+    .error-message{
+        padding: 8px 16px;
+        text-align: center;
     }
 }

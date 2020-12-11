@@ -39,6 +39,7 @@ div.session-page{
             transition: border .15s;
             font-size: 16px;
             margin-bottom: 8px;
+            box-sizing: border-box;
         }
         input:focus{
             outline: none;
@@ -56,13 +57,14 @@ div.session-page{
     height: 45px; 
     margin: 16px 0;
     cursor: pointer;
+    font-size: 16px;
 }
 p.have-account-text{
     text-align: center;
     color: rgb(156, 166, 175);
     font-weight: 400;
     line-height: 28px;
-    margin-bottom: 32px;
+    margin: 32px 0;
     a{
         font-weight: 500;
         color: rgb(99, 90, 199);
@@ -72,6 +74,9 @@ p.have-account-text{
         color: #635ac7;
     }
 } 
+.demo-user-btn {
+    font-size: 15px;
+}
 
 .exit {
     position: absolute;

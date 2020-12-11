@@ -1,0 +1,37 @@
+.error-page{
+    padding: 160px 0;
+    .error-page-hero{
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        transition: width .15s;
+        width: calc(100% - 64px);
+        text-align: center;
+        h1{
+            line-height: 1.285;
+            font-size: 3.5rem;
+        }
+        h3{
+            font-size: 1.9375rem;
+            line-height: 1.387;
+        }
+    }
+}
+.error-page-links{
+    max-width: 1200px;
+    margin: 80px 160px;
+    display: flex;
+    justify-content: space-around;
+    .error-page-link-container{
+        padding: 0 16px;
+        p{
+            color: rgb(100, 111, 121);
+            margin-bottom: 24px;
+        }
+        a{
+            color: rgb(121, 110, 255);
+            font-weight: 500;
+            
+        }
+    }
+}
