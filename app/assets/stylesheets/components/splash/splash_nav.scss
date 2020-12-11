@@ -1,0 +1,53 @@
+.splash-nav{
+    height: 56px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 64px;
+    position: fixed;
+    background: white;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
+    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+
+}
+.splash-nav a:last-child{
+    margin-left: 12px; 
+}
+
+.logo-container {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+    max-height: 100%;
+}
+.logo-container img{
+    max-height: 100%;
+    object-fit: contain;
+}
+.btn-splash{
+    background-color: rgb(39, 50, 64);
+    color: white;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    transition: background-color .15s,color .15s ease-in-out;
+}
+
+.btn-nav{
+    height: 36px;
+    line-height: 36px;
+    padding: 0 16px;
+}
+
+.nav-link:hover {
+    color: #796eff;
+}
+.nav-link {
+    padding: 0 12px;
+    height: 36px;
+    line-height: 36px;
+}

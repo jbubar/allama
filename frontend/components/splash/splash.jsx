@@ -9,7 +9,7 @@ const Splash  = () => {
             <SplashNav/>
             <div className='splash-page'>
                 <section className='splash-top-content'>
-                    <div>
+                    <div className='top-written-content'>
                         <h1>Work on big ideas, without the busywork.</h1>
                         <p>
                             From the small stuff to the big picture, 
@@ -18,11 +18,13 @@ const Splash  = () => {
                         </p>
                         <Link to="/signup" className="btn-splash">Try for free</Link>
                     </div>
-                    <img src={window.bigIdeasImgURL} alt="Team with big ideas"/>
+                    <div className="img-container">
+                        <img src={window.bigIdeasImgURL} alt="Team with big ideas"/>
+                    </div>
                 </section>
                 <footer className="splash-footer">
                     <h1>See everything the team's working on in one place.</h1>
-                    <Link to="/signup">Try for free</Link>
+                    <Link to="/signup" className='btn-splash'>Try for free</Link>
                 </footer>
             </div>
         </div>
