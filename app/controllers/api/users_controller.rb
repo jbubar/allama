@@ -5,6 +5,11 @@ class Api::UsersController < ApplicationController
   end
 
   def create
+    # team_name = params[:user][:team_name] ##This is just a brainstorm of what the code will eventually look like.
+    # team = Team.find_by(name: team_name)
+    # team = Team.new(name: team_name) unless team
+    # user_params[:team_id] = team.id
+    
     @user = User.new(user_params)
     if @user.save
       login!(@user)
