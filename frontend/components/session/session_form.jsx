@@ -10,7 +10,7 @@ export default class SessionForm extends React.Component {
   }
 
   componentWillUnmount(){
-      this.props.clearErrors()
+      if(this.props.errors.session > 0) this.props.clearErrors()
   }
   handleChange(field){
     return (e) => {
@@ -50,12 +50,12 @@ export default class SessionForm extends React.Component {
                     onChange={this.handleChange("full_name")}
                 />
             </label>
-            <label><p className="field-title">Team ID</p>
+            <label><p className="field-title">Team Name</p>
                 <input 
                     type="text" 
-                    value={this.state.team_id}
+                    value={this.state.team_name}
                     onChange={this.handleChange("team_id")}
-                    placeholder="Put a number between 1 and 10"
+                    placeholder="Existing or new team name"
                 />
             </label>
         </React.Fragment>

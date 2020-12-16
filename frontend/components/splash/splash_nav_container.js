@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 
 const mapStateToProps = state => ({
-  currentUser: state.entities.users[state.session.currentUserId],
+  currentUser: state.session.currentUser
 });
 
 export default withRouter(connect(mapStateToProps)(SplashNav));

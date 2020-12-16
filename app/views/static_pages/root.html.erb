@@ -4,7 +4,11 @@
     window.currentUser = <%= render(
       "api/users/user.json.jbuilder",
       user: current_user
-    ).html_safe %>
+    ).html_safe %>;
+    window.team = <%= render(
+      "api/users/team.json.jbuilder",
+      team: current_user.team
+    ).html_safe %>;
   </script>
 <% end %>
 
