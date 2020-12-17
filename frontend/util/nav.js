@@ -1,9 +1,9 @@
 export function getInitials(user) {
-  const idx_space = user.full_name.lastIndexOf(" ");
+  const idx_space = user.fullName.lastIndexOf(" ");
   if (idx_space === -1) {
-    return user.full_name.slice(0, 2);
+    return user.fullName.slice(0, 2);
   } else {
-    return (user.full_name[0] + user.full_name[idx_space + 1]).toUpperCase();
+    return (user.fullName[0] + user.fullName[idx_space + 1]).toUpperCase();
   }
 }
 

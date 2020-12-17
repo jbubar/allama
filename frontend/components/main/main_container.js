@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
-  getTeam: () => dispatch(getTeam(window.currentUser.team_id))
+  getTeam: () => dispatch(getTeam(window.currentUser.teamId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));

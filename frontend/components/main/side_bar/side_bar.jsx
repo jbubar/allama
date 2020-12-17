@@ -40,11 +40,6 @@ export default function SideBarNav(props) {
                 ) : ( null )
                 }
             </section>
-            <ul>
-                {
-                    // console.log(props)
-                }
-            </ul>
         </nav>
     )
 }

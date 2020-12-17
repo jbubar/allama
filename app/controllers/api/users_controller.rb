@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @team = @user.team
+    @projects = @team.projects
     render "api/users/show"
   end
 
