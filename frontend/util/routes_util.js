@@ -9,7 +9,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
         path={path}
         render={props => (
             loggedIn ? (
-                <Redirect to='/home'/>
+                <Redirect to='0/home'/>
             ) : (
                 <Component {...props}/>
             )
@@ -24,13 +24,13 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
             loggedIn ? (
                 <Component {...props}/>
             ) : (
-                <Redirect to='/login'/>
+                <Redirect to='/welcome'/>
             )
         )}
     />
 )
 const mapStateToProps = state => (
-    { loggedIn: Boolean(state.session.currentUser) }
+    { loggedIn: Boolean(state.session.currentUserId) }
 )
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

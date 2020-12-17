@@ -11,10 +11,10 @@ const App = () => {
     return(
         <div className="app">
             <Switch>
-                <ProtectedRoute exact path="/home" component={MainContainer} />
-                <AuthRoute exact path="/" component={SplashPage} />
-                <AuthRoute path="/login" component={LoginFormContainer} />
-                <AuthRoute path="/signup" component={SignupFormContainer} />
+                <AuthRoute exact path="/welcome" component={SplashPage} />
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <ProtectedRoute path="/0" component={MainContainer} />
                 <Route component={ErrorPage} />
             </Switch>
         </div>

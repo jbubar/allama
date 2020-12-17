@@ -3,5 +3,6 @@ import users from './users_reducer';
 import team from './teams_reducer';
 
 export default combineReducers({
-    team
+    team,
+    users
 })

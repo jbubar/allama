@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
-import { selectTeamMembers } from "../../reducers/selectors";
+import { selectTeamMembers } from "../../../reducers/selectors";
 import { withRouter } from "react-router-dom";
 import TopBarNav from "./top_bar";
 
 const mapStateToProps = (state) => ({
-  team: selectTeamMembers(state),
+  users: selectTeamMembers(state),
+  currentUser: state.entities.users[state.session.currentUserId],
 });
 
 // const mapDispatchToProps = dispatch => ({

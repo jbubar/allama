@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
 
   </head>
 
@@ -17,6 +18,7 @@
       window.logoImgURL = "<%= image_url('llama.jpg') %>";
       window.bigIdeasImgURL = "<%= image_url('big-ideas.png') %>";
       window.allamaLogoImgURL = "<%= image_url('allama-logo.svg') %>";
+      window.allamaLogoWhiteImgURL = "<%= image_url('allama-logo-white.svg') %>";
     </script>
     <%= yield %>
   </body>

@@ -1,5 +1,4 @@
 export function getInitials(user) {
-  console.log("user:", user);
   const idx_space = user.full_name.lastIndexOf(" ");
   if (idx_space === -1) {
     return user.full_name.slice(0, 2);

@@ -106,7 +106,7 @@ export default class SessionForm extends React.Component {
                 <input type="submit" className="submit-session-btn" value={ this.props.formType }/>
                 <div className="btn-splash btn-nav demo-user-btn"onClick={this.handleDemoUser}>Log in as demo User</div>
                 {this.linkToOtherSessionForm()}
-                <Link className="exit" to='/'>Exit</Link>
+                <Link className="exit" to='/welcome'>Exit</Link>
             </form>
         </div>
     )

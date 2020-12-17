@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let preloadedState = {};
     if (window.currentUser){
         preloadedState = {
-            session: { currentUser: window.currentUser},
-            entities: { team: window.team }
+            session: { currentUserId: window.currentUser.id}
         }
     }
 
@@ -25,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.APISessionUtils = APISessionUtils;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.store = store;
     window.action = action
     //END TESTING
 })
