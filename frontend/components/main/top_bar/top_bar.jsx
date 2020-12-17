@@ -37,7 +37,7 @@ export default function TopBar(props) {
                     onClick={openDropDown}
                 >
                     {getInitials(props.currentUser)}
-                    <div className="tool-tip">{props.currentUser.full_name}</div>
+                    <div className="tool-tip">{props.currentUser.fullName}</div>
                 </div>
             ) : null }
             {visible && 
