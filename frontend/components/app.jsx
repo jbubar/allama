@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeContainer from './home/home_container';
+import MainContainer from './main/main_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/routes_util';
@@ -11,10 +11,10 @@ const App = () => {
     return(
         <div className="app">
             <Switch>
-                <ProtectedRoute exact path="/home" component={HomeContainer} />
-                <AuthRoute exact path="/" component={SplashPage} />
-                <AuthRoute path="/login" component={LoginFormContainer} />
-                <AuthRoute path="/signup" component={SignupFormContainer} />
+                <AuthRoute exact path="/welcome" component={SplashPage} />
+                <AuthRoute exact path="/login" component={LoginFormContainer} />
+                <AuthRoute exact path="/signup" component={SignupFormContainer} />
+                <ProtectedRoute path="/0" component={MainContainer} />
                 <Route component={ErrorPage} />
             </Switch>
         </div>

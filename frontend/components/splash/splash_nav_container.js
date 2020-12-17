@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   currentUser: state.entities.users[state.session.currentUserId],
 });
 

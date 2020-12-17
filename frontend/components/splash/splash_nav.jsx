@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 export default function SplashNav(props) {
     return (
         <nav className='splash-nav'>
-            <Link to='/' className="logo-container">
+            <Link to='/welcome' className="logo-container">
                 <img src={window.allamaLogoImgURL} alt="a llama logo"/>
             </Link>
             {/* <a href="mailto: jpbubar@gmail.com" className="nav-link">Contact Josh</a> */}
             {
                 props.currentUser ? (
                     <React.Fragment>
-                        <Link to="/home" className="btn-splash btn-nav">Go to Allama</Link> 
+                        <Link to="/0/home" className="btn-splash btn-nav">Go to Allama</Link> 
                     </React.Fragment>
                 ) : (
                 <React.Fragment>

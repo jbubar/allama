@@ -5,9 +5,9 @@ export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = payload => ({
     type: RECEIVE_CURRENT_USER,
-    user
+    payload
 })
 
 const logoutCurrentUser = () => ({
@@ -27,13 +27,13 @@ export const clearErrors = () => ({
 
 export const signup = newUser => dispatch => {
     return APISessionUtils.signup(newUser)
-        .then(user => dispatch(receiveCurrentUser(user)),
+        .then(payload => dispatch(receiveCurrentUser(payload)),
             err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const login = userCredentials => dispatch => {
     return APISessionUtils.login(userCredentials)
-        .then(user => dispatch(receiveCurrentUser(user)),
+        .then(payload => dispatch(receiveCurrentUser(payload)),
             err => dispatch(receiveErrors(err.responseJSON)));
 }
 
