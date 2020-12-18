@@ -3,6 +3,43 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 
 
 export default function ProjectPage(props) {
+    function addTaskClickHandler(e){
+        const el = $(e.currentTarget)
+        $("<div class='task-legend new-task'><span class='task-title column task'><span class='input new-input' role='textbox' contenteditable></span></span><span class='column'></span><span class='column'></span></div>")
+        .insertBefore(el)
+
+        const newInput = document.querySelector('.new-input')
+        const newTask = document.querySelector('.new-task')
+        const page = document.querySelector('.main-page-container')
+        const focusOnInput = (e) => {
+            e.stopPropagation();
+            newInput.focus();
+        }
+        const onPressEnter = (e) => {
+            if (e.keyCode === 13) {
+                createTask();
+            }
+        }
+        const createTask = (e) => {
+            if (newInput.innerHTML.length > 0){
+                props.createTask({
+                    title: newInput.innerHTML, 
+                    assignee_id: props.currentUserId, 
+                    section_id: el.attr('id')
+                })
+            }
+            newInput.removeEventListener('keydown', onPressEnter)
+            newTask.removeEventListener('click', focusOnInput)
+            page.removeEventListener('click', createTask)
+            newTask.remove()
+        }
+        newInput.focus();
+        newInput.addEventListener('keydown', onPressEnter)
+        newTask.addEventListener('click', focusOnInput)
+        page.addEventListener('click', createTask)
+    }
+    
+
     return (
         <div>
             {console.log("in project page!!!", props)}
@@ -16,7 +53,7 @@ export default function ProjectPage(props) {
                                 if (task) return <div key={task.id} className="task-legend">
                                     
                                     <span className="task-title column task">
-                                        <AiOutlineCheckCircle className='check-icon'/>
+                                        <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
                                         <span
                                             className="input" 
                                             role="textbox" 
@@ -26,14 +63,14 @@ export default function ProjectPage(props) {
                                     <span className="column">
                                         {console.log(task)}
                                         {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
-                                        console.log(props.users[task.assigneeId]): null}
+                                            props.users[task.assigneeId].fullName : null}
                                     </span>
                                     <span className="column">{task.dueDate}</span>
                                 </div>
                             })) : (
                                 <p>No tasks have been made for this project yet!</p>
                             )}
-                            <div className="add-task">Add task...</div>
+                            <div className="add-task" onClick={addTaskClickHandler} id={section.id}>Add task...</div>
                         </div>
                     </div>
                 )) : (
