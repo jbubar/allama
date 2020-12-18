@@ -96,3 +96,24 @@
     background: #f6f8f9;
     transform: translate3d(0, -4px, 0);
 }
+
+
+// svg styling taken from asana.com
+.HomePotTileDetailed:not(.HomePotTileDetailed--noMember):hover .PotTile-projectPersonalizationIcon, .HomePotTileDetailed--isMenuOpen:not(.HomePotTileDetailed--noMember) .PotTile-projectPersonalizationIcon {
+    transform: translate3d(0, -8px, 0);
+}
+.MultiColorIcon--large {
+    height: 48px;
+    width: 48px;
+}
+.MultiColorIcon {
+    clip-rule: evenodd;
+    fill-rule: evenodd;
+    fill: white;
+}
+.MultiColorIcon-path--fadedBlack {
+    fill: rgba(21,27,38,.75);
+}
+.MultiColorIcon-path--white {
+    fill: #fff;
+}

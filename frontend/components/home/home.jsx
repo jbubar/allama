@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { COLORS } from "../../util/nav";
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import Icon from "./icon.jsx" 
 
 const Home = (props) => {
     return (
@@ -31,7 +32,9 @@ const Home = (props) => {
                         Object.values(props.projects).map(project => {
                             if (project) return (
                                 <div key={project.id} className="project-btn">
-                                    <div className={`project-tile ${COLORS[project.id % 20]}`}></div>
+                                    <div className={`project-tile ${COLORS[project.id % 20]}`}>
+                                        <Icon/>
+                                    </div>
                                     <span className="project-name">{project.name}</span>
                                 </div>
                             )
