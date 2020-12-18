@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiOutlineCheckCircle } from "react-icons/ai";
-
+import MutationObserver from 'react-mutation-observer';
 
 export default function ProjectPage(props) {
     function addTaskClickHandler(e){
@@ -39,6 +39,20 @@ export default function ProjectPage(props) {
         page.addEventListener('click', createTask)
     }
     
+    function updateTaskHandler(e){
+        const input = e.target.parentElement
+        console.log(e)
+        const onEnterKey = (e) => {
+            if (e.keyCode === 13) {
+                props.updateTask({title:input.innerHTML, id:input.id});
+                console.log("we did itASDFLKJAJSDLFKJASDLKFJASLKD")
+
+                input.removeEventListener('click', onEnterKey)
+                input.blur();
+            }
+        }
+        input.addEventListener('keydown', onEnterKey)
+    }
 
     return (
         <div>
@@ -54,11 +68,14 @@ export default function ProjectPage(props) {
                                     
                                     <span className="task-title column task">
                                         <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
-                                        <span
-                                            className="input" 
-                                            role="textbox" 
-                                            contentEditable
-                                        >{task.title}</span>
+                                        <MutationObserver onContentChange={updateTaskHandler}>
+                                            <span
+                                                id={task.id}
+                                                className="input" 
+                                                role="textbox" 
+                                                contentEditable
+                                            >{task.title}</span>
+                                        </MutationObserver>
                                     </span>
                                     <span className="column">
                                         {console.log(task)}
