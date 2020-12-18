@@ -1,3 +1,3 @@
-json.partial! 'api/projects/projects', projects: @projects
-json.partial! 'api/sections/sections', sections: @projects.sections
-json.partial! 'api/tasks/tasks', tasks: @projects.tasks
+json.partial! 'api/sections/sections', sections: @project.sections
+json.partial! 'api/tasks/tasks', tasks: @project.tasks
+json.partial! 'api/teams/team', team: @project.team

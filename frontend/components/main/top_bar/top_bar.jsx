@@ -4,23 +4,45 @@ import { RiMenuLine } from 'react-icons/ri';
 import { BsQuestion, BsPlus} from 'react-icons/bs';
 import DropDown from './top-bar-drop-down-container';
 import { useClickOutside } from '../../../hooks/click_outside';
+import Icon from "../../home/icon.jsx" 
+
 
 function openSideNav(e){
     const sidebar = document.querySelector('.sidebar-container')
     sidebar.classList.remove("hide");
     e.currentTarget.setAttribute('hidden', null);
 }
+function headerTitle(props){
+    switch(props.match.path){
+        case "/0/home":
+            return(<div>Home</div>)
+        case "/0/projects/:projectId":
+            return (<div>
+                <div className={`project-tile tile-small ${COLORS[props.match.params.projectId % 20]}`}>
+                    <Icon/>
+                </div>
+                <div className="project-name">
+                    { Object.keys(props.projects).length > 0 ?
+                        props.projects[props.match.params.projectId].name : null
+                    }
+                </div>
+                </div>)
+        default:
+            return (<div>Allama made a mistake... oops.</div>)
+    }
+}
 
 export default function TopBar(props) {
     const [visible, setVisible] = useState(false);
     const ref = useClickOutside(() => setVisible(false));
     const openDropDown = () => setVisible(!visible);
+    console.log("HOME PROPSSS", props);
     return (
         <nav className="topbar-container">
             <div  onClick={openSideNav} className="ham-nav-icon" hidden>
                 <RiMenuLine/>
             </div>
-            <div><h1 className="top-nav-title">Home</h1></div>
+            <div><h1 className="top-nav-title">{headerTitle(props)}</h1></div>
             <div className="search">
                 <input 
                     type="text" 

@@ -6,6 +6,7 @@ import TopBarNav from "./top_bar";
 const mapStateToProps = (state) => ({
   users: selectTeamMembers(state),
   currentUser: state.entities.users[state.session.currentUserId],
+  projects: state.entities.projects
 });
 
 // const mapDispatchToProps = dispatch => ({

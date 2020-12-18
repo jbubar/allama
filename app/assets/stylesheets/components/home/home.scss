@@ -5,16 +5,7 @@
 .home-section{
     margin: 32px auto;
 }
-.home-section-header{
-    align-items: center;
-    border-bottom: 2px solid #e8ecee;
-    display: flex;
-    height: 32px;
-    margin-left: 24px;
-    margin-right: 24px;
-    padding: 8px 0;
-    position: relative;
-}
+//section header is in the main.scss file
 .home-task{
     border: 2px solid #e8ecee;
     height: 26px;

@@ -129,3 +129,26 @@ h1:hover{
         cursor: pointer;
     }
 }
+.top-nav-title > div{
+    display: flex;
+    align-items: center;
+    .tile-small.project-tile{
+        border-radius: 12px;
+        height: 48px;
+        width: 48px;
+        & > div{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        svg{
+            height: 24px;
+            width: 24px;
+        }
+        margin: 0 4px;
+    }
+    .project-name{
+        padding-left: 8px;
+    }
+}

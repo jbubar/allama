@@ -8,7 +8,7 @@ const Home = (props) => {
     return (
         <div className="home-inner">
             <section className="tasks home-section">
-                <h4 className="home-section-header">My Tasks</h4>
+                <h4 className="section-header">My Tasks</h4>
                 <div>
                     { props.tasks ? ( props.tasks.map(task => {
                         if (task) return <div key={task.id} className="home-task">
@@ -25,18 +25,18 @@ const Home = (props) => {
                 </div>
             </section>
             <section className="home-projects home-section">
-                <h4 className="home-section-header">Projects</h4>
+                <h4 className="section-header">Projects</h4>
                 <div>
                     {console.log(props.projects)}
                     { props.projects ? (
                         Object.values(props.projects).map(project => {
                             if (project) return (
-                                <div key={project.id} className="project-btn">
+                                <Link key={project.id} className="project-btn" to={`/0/projects/${project.id}`}>
                                     <div className={`project-tile ${COLORS[project.id % 20]}`}>
                                         <Icon/>
                                     </div>
                                     <span className="project-name">{project.name}</span>
-                                </div>
+                                </Link>
                             )
                         })
                     ) : (
