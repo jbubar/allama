@@ -78,8 +78,8 @@ export default function ProjectPage(props) {
                                     </span>
                                     <span className="column">
                                         {console.log(task)}
-                                        {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
-                                            props.users[task.assigneeId].fullName : null}
+                                        {/* {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
+                                            props.users[task.assigneeId].fullName : null} */}
                                     </span>
                                     <span className="column">{task.dueDate}</span>
                                 </div>
