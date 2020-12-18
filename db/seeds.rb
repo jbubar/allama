@@ -15,10 +15,10 @@ nelson = User.create!({full_name: 'Nelson Olguin', email: 'nelson@savetheworld.c
 cory = User.create!({full_name: 'Cory Henry', email: 'gotchanow@doc.com', password: '123456', team_id: badgers.id})
 baruch = User.create!({full_name: 'Baruch Spinoza', email: 'coolkid.com', password: '123456', team_id: badgers.id})
 
-full_stack = Project.create!({name: 'MERN', description: 'Learn how to use mern and make a compeling project from it', due_date: Date.new(2021,1,3), owner_id: baruch, team_id: badgers.id})
-befriend = Project.create!({name: 'Befriend a Penguin Project', description: 'Do you know if penguins are friendly? Lets find out', due_date: Date.today, owner_id: octavia, team_id: badgers.id})
-mars = Project.create!({name: 'Mars', description: 'Good morning', due_date: Date.today, owner_id: nelson, team_id: badgers.id})
-global_warming = Project.create!({name: 'Solve Global Warming', description: 'Probably the most worth out time', due_date: Date.new(2020,1,1), owner_id: cory, team_id: badgers.id})
+full_stack = Project.create!({name: 'MERN', description: 'Learn how to use mern and make a compeling project from it', due_date: Date.new(2021,1,3), owner_id: baruch.id, team_id: badgers.id})
+befriend = Project.create!({name: 'Befriend a Penguin Project', description: 'Do you know if penguins are friendly? Lets find out', due_date: Date.today, owner_id: octavia.id, team_id: badgers.id})
+mars = Project.create!({name: 'Mars', description: 'Good morning', due_date: Date.today, owner_id: nelson.id, team_id: badgers.id})
+global_warming = Project.create!({name: 'Solve Global Warming', description: 'Probably the most worth out time', due_date: Date.new(2020,1,1), owner_id: cory.id, team_id: badgers.id})
 
 to_do = Section.create!({name: 'To Do', project_id: full_stack.id})
 done = Section.create!({name: 'Done', project_id: full_stack.id})
