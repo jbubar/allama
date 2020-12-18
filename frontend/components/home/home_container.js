@@ -8,7 +8,7 @@ import { selectUsersTasks, selectProjects } from "../../reducers/selectors";
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.currentUserId],
     tasks: selectUsersTasks(state),
-    projects: selectProjects(state)
+    projects: state.entities.projects
 });
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout())
