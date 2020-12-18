@@ -8,7 +8,10 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6, allow_nil: true }
 
     belongs_to :team
-
+    has_many :tasks,
+      foreign_key: :assignee_id,
+      class_name: :Task
+      
     def self.new_with_team(params)
       team_name = params[:team_name] ##This is just a brainstorm of what the code will eventually look like.
       team = Team.find_by(name: team_name)

@@ -1,0 +1,1 @@
+json.extract! project, :id, :name, :description, :due_date, :owner_id, :team_id

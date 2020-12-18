@@ -1,0 +1,76 @@
+.project-page-container{
+    display: flex;
+    flex-direction: column;
+}
+.task-legend{
+    display: flex;
+    height: 37px;
+    line-height: 37px;
+    border-bottom: 0;
+    box-shadow: 0 1px 4px 0 rgba(21,27,38,.08);
+    .column{
+        color: #6f7782;
+        font-size: 12px;
+        border-top: 1px solid #e8ecee;
+        padding: 0 8px;
+        width: 120px;
+        border-left: 1px solid #e8ecee;
+    }
+    .task-title{
+        align-items: stretch;
+        width: auto;
+        padding-left: 24px;
+        border-left: none;
+        flex: 1 0 auto;
+    }
+    .task.task-title{
+        padding-left: 48px;
+    }
+    .input{
+        padding-left: 6px;
+        color: rgb(21, 27, 38);
+        line-height: 28px;
+        height: 28px;
+        min-width: 20px;
+        padding: 0 4px;
+        font-size: 13px;
+    }
+    .input:hover{
+        border-color: #9ca6af;
+        background: #fff;
+        border: 1px solid #cbd4db;
+
+    }
+    .task-title > svg {
+        margin-bottom: -3px;
+        padding: 2px 5px 1px 2px;
+
+    }
+    .task-title > svg:hover {
+        fill: #14aaf5;
+        cursor: pointer;
+    }
+}
+.add-task{
+    cursor: pointer;
+    height: 37px;
+    line-height: 37px;
+    margin-bottom: 4px;
+    padding-left: 56px;
+    color: #6f7782;
+    font-size: 13px;
+}
+.add-task:hover{
+    background-color: rgba(180,180,180,.2);
+}
+
+.add-section{
+    height: 50px;
+    margin-left: 24px;
+    line-height: 50px;
+    color: #6f7782;
+}
+.add-section:hover{
+    color: #14aaf5;
+    cursor: pointer;
+}

@@ -10,10 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_12_011824) do
+ActiveRecord::Schema.define(version: 2020_12_17_010716) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.date "due_date"
+    t.integer "owner_id"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_projects_on_name"
+    t.index ["owner_id"], name: "index_projects_on_owner_id"
+    t.index ["team_id"], name: "index_projects_on_team_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "name"
+    t.integer "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name", "project_id"], name: "index_sections_on_name_and_project_id", unique: true
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "section_id"
+    t.integer "assignee_id"
+    t.date "due_date"
+    t.boolean "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assignee_id"], name: "index_tasks_on_assignee_id"
+    t.index ["section_id"], name: "index_tasks_on_section_id"
+    t.index ["title"], name: "index_tasks_on_title"
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string "name", null: false

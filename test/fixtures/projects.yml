@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  due_date: 2020-12-16
+  owner_id: 1
+  team_id: 1
+
+two:
+  name: MyString
+  description: MyText
+  due_date: 2020-12-16
+  owner_id: 1
+  team_id: 1

@@ -1,0 +1,111 @@
+.home-inner{
+    max-width: 840px;
+    margin: 0 auto;
+}
+.home-section{
+    margin: 32px auto;
+}
+//section header is in the main.scss
+.home-task{
+    border: 2px solid #e8ecee;
+    height: 26px;
+    line-height: 26px;
+    width: 100%;
+    border-radius: 8px;
+    margin: 0 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .task-title{
+        margin-right: auto;
+    }
+}
+.task-project{
+    margin-left: auto;
+    border-radius: 10px;
+    color: #151b26;
+    font-size: 12px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 8px;
+    text-align: left;
+    white-space: nowrap;
+}
+.home-task > * {
+    margin: 0 8px;
+}
+.home-section > div {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 16px;
+}
+.project-btn{
+    margin: 0 8px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    height: 220px;
+    min-width: 152px;
+    padding: 16px 0;
+    width: 152px;
+    align-items: center;
+    background: rgba(246,248,249,0);
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    transition-duration: .4s;
+    .project-tile{
+        height: 120px;
+        width: 120px;
+        border-radius: 20px;
+        box-shadow: inset 0 -2px rgba(0,0,0,.05);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-flow: column;
+        position: relative;
+    }
+    .project-name{
+        box-sizing: border-box;
+        margin-top: 8px;
+        padding: 0 8px;
+        color: #151b26;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 16px;
+        max-height: 32px;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+}
+.project-btn:hover {
+    cursor: pointer;
+    background: #f6f8f9;
+    transform: translate3d(0, -4px, 0);
+}
+
+
+// svg styling taken from asana.com
+.HomePotTileDetailed:not(.HomePotTileDetailed--noMember):hover .PotTile-projectPersonalizationIcon, .HomePotTileDetailed--isMenuOpen:not(.HomePotTileDetailed--noMember) .PotTile-projectPersonalizationIcon {
+    transform: translate3d(0, -8px, 0);
+}
+.MultiColorIcon--large {
+    height: 48px;
+    width: 48px;
+}
+.MultiColorIcon {
+    clip-rule: evenodd;
+    fill-rule: evenodd;
+    fill: white;
+}
+.MultiColorIcon-path--fadedBlack {
+    fill: rgba(21,27,38,.75);
+}
+.MultiColorIcon-path--white {
+    fill: #fff;
+}
