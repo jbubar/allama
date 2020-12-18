@@ -27,6 +27,8 @@ function headerTitle(props){
                     }
                 </div>
                 </div>)
+        case "/0/tasks":
+            return(<div>My Tasks</div>)
         default:
             return (<div>Allama made a mistake... oops.</div>)
     }

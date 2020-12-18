@@ -45,7 +45,6 @@ export default function ProjectPage(props) {
         const onEnterKey = (e) => {
             if (e.keyCode === 13) {
                 props.updateTask({title:input.innerHTML, id:input.id});
-                console.log("we did itASDFLKJAJSDLFKJASDLKFJASLKD")
 
                 input.removeEventListener('click', onEnterKey)
                 input.blur();

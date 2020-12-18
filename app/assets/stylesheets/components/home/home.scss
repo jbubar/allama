@@ -5,7 +5,7 @@
 .home-section{
     margin: 32px auto;
 }
-//section header is in the main.scss file
+//section header is in the main.scss
 .home-task{
     border: 2px solid #e8ecee;
     height: 26px;
@@ -18,20 +18,21 @@
     align-items: center;
     overflow: hidden;
     .task-title{
-
+        margin-right: auto;
     }
-    .task-project{
-        margin-left: auto;
-        border-radius: 10px;
-        font-size: 12px;
-        font-weight: 400;
-        height: 20px;
-        line-height: 20px;
-        overflow: hidden;
-        padding: 0 8px;
-        text-align: left;
-        white-space: nowrap;
-    }
+}
+.task-project{
+    margin-left: auto;
+    border-radius: 10px;
+    color: #151b26;
+    font-size: 12px;
+    font-weight: 400;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 0 8px;
+    text-align: left;
+    white-space: nowrap;
 }
 .home-task > * {
     margin: 0 8px;

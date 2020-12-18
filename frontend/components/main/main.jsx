@@ -22,7 +22,7 @@ export default function Main(props) {
                 <Switch>
                     <Route path="/0/home" component={HomeContainer} />
                     <Route path="/0/projects/:projectId" component={ProjectContainer} />
-                    <Route path="/0/tasks/:userId" component={TasksContainer} />
+                    <Route path="/0/tasks" component={TasksContainer} />
 
                     {/* <Route component={ErrorPage} /> */}
                 </Switch>
