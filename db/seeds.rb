@@ -34,3 +34,5 @@ something = Section.create!({name: 'Do something', project_id: global_warming.id
 
 eat = Task.create!({title:'Breakfast', section_id:done.id, assignee_id: baruch.id, due_date: Date.today})
 learn = Task.create!({title:'Learn some code', section_id:done.id, assignee_id: nelson.id, due_date: Date.today})
+ideas = Task.create!({title:'Come up with a good idea', section_id:to_do.id, assignee_id: nelson.id, due_date: Date.today})
+google = Task.create!({title:'Learn how to google', section_id:to_do.id, assignee_id: cory.id, due_date: Date.today})
