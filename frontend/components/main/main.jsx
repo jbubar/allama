@@ -20,9 +20,9 @@ export default function Main(props) {
             <div className="main-page">
                 <TopBarContainer />
                 <Switch>
-                    <Route path="/0/home" component={HomeContainer} />
-                    <Route path="/0/projects/:projectId" component={ProjectContainer} />
-                    <Route path="/0/tasks" component={TasksContainer} />
+                    <Route path="/home" component={HomeContainer} />
+                    <Route path="/projects/:projectId" component={ProjectContainer} />
+                    <Route path="/tasks" component={TasksContainer} />
 
                     {/* <Route component={ErrorPage} /> */}
                 </Switch>

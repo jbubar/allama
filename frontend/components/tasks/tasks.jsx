@@ -45,7 +45,7 @@ export default function Tasks(props) {
                                         </MutationObserver>
                                     </span>
                                     <span className="column">
-                                        <Link to={`/0/projects/${task.projectId}`} className={`task-project ${COLORS[task.projectId % 20]}`}>
+                                        <Link to={`/projects/${task.projectId}`} className={`task-project ${COLORS[task.projectId % 20]}`}>
                                             {props.projects[task.projectId] ? props.projects[task.projectId].name : null}
                                         </Link>
                                     </span>

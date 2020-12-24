@@ -14,7 +14,7 @@ const Home = (props) => {
                         if (task) return <div key={task.id} className="home-task">
                             <AiOutlineCheckCircle/>
                             <span className="task-title">{task.title}</span>
-                            <Link to={`/0/projects/${task.projectId}`}className={`task-project ${COLORS[task.projectId % 20]}`}>
+                            <Link to={`/projects/${task.projectId}`}className={`task-project ${COLORS[task.projectId % 20]}`}>
                                 {props.projects[task.projectId] ? props.projects[task.projectId].name : null}
                             </Link>
                             <p>{task.dueDate}</p>
@@ -31,7 +31,7 @@ const Home = (props) => {
                     { props.projects ? (
                         Object.values(props.projects).map(project => {
                             if (project) return (
-                                <Link key={project.id} className="project-btn" to={`/0/projects/${project.id}`}>
+                                <Link key={project.id} className="project-btn" to={`/projects/${project.id}`}>
                                     <div className={`project-tile ${COLORS[project.id % 20]}`}>
                                         <Icon/>
                                     </div>

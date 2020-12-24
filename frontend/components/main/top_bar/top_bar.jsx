@@ -14,9 +14,9 @@ function openSideNav(e){
 }
 function headerTitle(props){
     switch(props.match.path){
-        case "/0/home":
+        case "/home":
             return(<div>Home</div>)
-        case "/0/projects/:projectId":
+        case "/projects/:projectId":
             return (<div>
                 <div className={`project-tile tile-small ${COLORS[props.match.params.projectId % 20]}`}>
                     <Icon/>
@@ -27,7 +27,7 @@ function headerTitle(props){
                     }
                 </div>
                 </div>)
-        case "/0/tasks":
+        case "/tasks":
             return(<div>My Tasks</div>)
         default:
             return (<div>Allama made a mistake... oops.</div>)
@@ -38,7 +38,6 @@ export default function TopBar(props) {
     const [visible, setVisible] = useState(false);
     const ref = useClickOutside(() => setVisible(false));
     const openDropDown = () => setVisible(!visible);
-    console.log("HOME PROPSSS", props);
     return (
         <nav className="topbar-container">
             <div  onClick={openSideNav} className="ham-nav-icon" hidden>

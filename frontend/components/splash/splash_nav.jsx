@@ -11,7 +11,7 @@ export default function SplashNav(props) {
             {
                 props.currentUser ? (
                     <React.Fragment>
-                        <Link to="/0/home" className="btn-splash btn-nav">Go to Allama</Link> 
+                        <Link to="/home" className="btn-splash btn-nav">Go to Allama</Link> 
                     </React.Fragment>
                 ) : (
                 <React.Fragment>

@@ -1,0 +1,17 @@
+version: "3.6"
+services:
+  postgres:
+    image: postgres:13
+    restart: always    
+    volumes:    
+      - db_data:/var/lib/postgresql/data
+  rails:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - "postgres"
+    environment: 
+      DATABASE_URL: postgres://postgres:5432/postgres
+volumes: 
+  db_data:
