@@ -55,14 +55,13 @@ export default function ProjectPage(props) {
 
     return (
         <div>
-            {console.log("in project page!!!", props)}
             <div className="projects-page-inner">
                 { console.log(props)}
                 { props.sections ? props.sections.map(section => (
                     <div key={section.id}>
                         <h4 className="section-header">{section.name}</h4>
                         <div>
-                            { props.tasks ? ( props.tasks.filter(task => task.projectId === section.projectId).map(task => {
+                            { props.tasks ? ( props.tasks.filter(task => task.sectionId === section.id).map(task => {
                                 if (task) return <div key={task.id} className="task-legend">
                                     
                                     <span className="task-title column task">
@@ -77,9 +76,8 @@ export default function ProjectPage(props) {
                                         </MutationObserver>
                                     </span>
                                     <span className="column">
-                                        {console.log(task)}
-                                        {/* {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
-                                            props.users[task.assigneeId].fullName : null} */}
+                                        {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
+                                            props.users[task.assigneeId].fullName : null}
                                     </span>
                                     <span className="column">{task.dueDate}</span>
                                 </div>

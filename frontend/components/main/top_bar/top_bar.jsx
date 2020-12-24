@@ -18,7 +18,7 @@ function headerTitle(props){
             return(<div>Home</div>)
         case "/projects/:projectId":
             return (<div>
-                <div className={`project-tile tile-small ${COLORS[props.match.params.projectId % 20]}`}>
+                <div className={`project-tile tile-small ${COLORS[(props.match.params.projectId + 10) % 20]}`}>
                     <Icon/>
                 </div>
                 <div className="project-name">
