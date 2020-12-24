@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { COLORS, getInitials } from '../../../util/nav';
 import { RiMenuFoldLine } from 'react-icons/ri';
+import UserAvatar from "../user_avatar";
 
 function closeNav(e){
     if (e.target.id === "close-sidebar") {
@@ -32,9 +32,7 @@ export default function SideBarNav(props) {
                 {   props.team ? (
                     props.team.map((member) => {
                         return(
-                            <div key={member.id} className={`nav-circle-item ${COLORS[member.id % 20]}`}>
-                                {getInitials(member)}
-                            </div>
+                            <UserAvatar user={member} />
                         )
                     }) 
                 ) : ( null )
