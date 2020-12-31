@@ -27,7 +27,6 @@ const Home = (props) => {
             <section className="home-projects home-section">
                 <h4 className="section-header">Projects</h4>
                 <div>
-                    {console.log(props.projects)}
                     { props.projects ? (
                         Object.values(props.projects).map(project => {
                             if (project) return (

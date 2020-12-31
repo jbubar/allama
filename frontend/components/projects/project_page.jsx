@@ -42,7 +42,6 @@ export default function ProjectPage(props) {
     
     function updateTaskHandler(e){
         const input = e.target.parentElement
-        console.log(e)
         const onEnterKey = (e) => {
             if (e.keyCode === 13) {
                 props.updateTask({title:input.innerHTML, id:input.id});
@@ -57,7 +56,6 @@ export default function ProjectPage(props) {
     return (
         <div>
             <div className="projects-page-inner">
-                { console.log(props)}
                 { props.sections ? props.sections.map(section => (
                     <div key={section.id}>
                         <h4 className="section-header">{section.name}</h4>

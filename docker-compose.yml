@@ -1,17 +1,20 @@
-version: "3.6"
+version: "3.8"
 services:
-  postgres:
+  db:
+    container_name: DATABASE
     image: postgres:13
     restart: always    
     volumes:    
       - db_data:/var/lib/postgresql/data
+    environment: 
+      POSTGRES_PASSWORD: password
+
   rails:
+    container_name: BACKEND
     build: .
     ports:
       - "3000:3000"
     depends_on: 
-      - "postgres"
-    environment: 
-      DATABASE_URL: postgres://postgres:5432/postgres
+      - db
 volumes: 
   db_data:

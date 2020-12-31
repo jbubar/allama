@@ -8,7 +8,6 @@ export default function Tasks(props) {
     
     function updateTaskHandler(e){
         const input = e.target.parentElement
-        console.log(e)
         const onEnterKey = (e) => {
             if (e.keyCode === 13) {
                 props.updateTask({title:input.innerHTML, id:input.id});

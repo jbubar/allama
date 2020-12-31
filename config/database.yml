@@ -14,6 +14,16 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
+###### FOR DOCKER
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   host: db
+#   username: postgres
+#   password: password
+#   pool: 5
+
+#### FOR HEROKU
 default: &default
   adapter: postgresql
   encoding: unicode

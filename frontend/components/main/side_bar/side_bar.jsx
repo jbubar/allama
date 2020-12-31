@@ -32,7 +32,7 @@ export default function SideBarNav(props) {
                 {   props.team ? (
                     props.team.map((member) => {
                         return(
-                            <UserAvatar user={member} />
+                            <UserAvatar key={member.id} user={member} />
                         )
                     }) 
                 ) : ( null )

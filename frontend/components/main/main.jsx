@@ -6,13 +6,20 @@ import TopBarContainer from './top_bar/top_bar_container';
 import ProjectContainer from '../projects/project_container';
 import TasksContainer from '../tasks/tasks_container';
 import ErrorPage from '../error-page';
+import { RiWindowLine } from 'react-icons/ri';
 
 
 
 export default function Main(props) {
     useEffect(() => {
         //query the database for
-        props.getTeam()
+        let teamId;
+        if (props.currentUser){
+            teamId = props.currentUser.teamId;
+        } else{
+            teamId = window.currentUser.teamId;
+        }
+        props.getTeam(teamId)
     }, [SideBarContainer])
     return (
         <div className="main-page-container">
