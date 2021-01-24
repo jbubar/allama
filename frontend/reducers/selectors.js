@@ -2,9 +2,11 @@ export const selectTeamMembers = state => {
   return Object.values(state.entities.users);
 };
 
-export const selectUsersTasks = state => {
+export const selectUsersTasks = (state, userId) => {
   return Object.values(state.entities.tasks).filter(
-    (task) => task.assigneeId === state.session.currentUserId
+    (task) => {
+      return task.assigneeId == userId;
+    }
   );
 }
 

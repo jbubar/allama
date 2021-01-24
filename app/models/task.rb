@@ -6,4 +6,5 @@ class Task < ApplicationRecord
     has_one :project,
         through: :section,
         source: :project
+
 end

@@ -27,8 +27,9 @@ function headerTitle(props){
                     }
                 </div>
                 </div>)
-        case "/tasks":
-            return(<div>My Tasks</div>)
+        case "/tasks/:userId":
+            // return(<div>{props.users[props.match.params.userId]}'s Tasks</div>)
+            return (<div>tasks!</div>)
         default:
             return (<div>Allama made a mistake... oops.</div>)
     }

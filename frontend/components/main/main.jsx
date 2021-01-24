@@ -5,10 +5,6 @@ import { Link, Switch, Route } from "react-router-dom";
 import TopBarContainer from './top_bar/top_bar_container';
 import ProjectContainer from '../projects/project_container';
 import TasksContainer from '../tasks/tasks_container';
-import ErrorPage from '../error-page';
-import { RiWindowLine } from 'react-icons/ri';
-
-
 
 export default function Main(props) {
     useEffect(() => {
@@ -29,9 +25,7 @@ export default function Main(props) {
                 <Switch>
                     <Route path="/home" component={HomeContainer} />
                     <Route path="/projects/:projectId" component={ProjectContainer} />
-                    <Route path="/tasks" component={TasksContainer} />
-
-                    {/* <Route component={ErrorPage} /> */}
+                    <Route path="/tasks/:userId" component={TasksContainer} />
                 </Switch>
             </div>
         </div>

@@ -17,7 +17,7 @@ const App = () => {
                 <HomeRoute exact path="/" />
                 <ProtectedRoute path="/home" component={MainContainer} />
                 <ProtectedRoute path="/projects/:projectId" component={MainContainer} />
-                <ProtectedRoute path="/tasks" component={MainContainer} />
+                <ProtectedRoute path="/tasks/:userId" component={MainContainer} />
                 <Route component={ErrorPage} />
             </Switch>
         </div>

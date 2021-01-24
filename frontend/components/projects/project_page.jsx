@@ -2,6 +2,7 @@ import React from 'react';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import MutationObserver from 'react-mutation-observer';
 import UserAvatar from "../main/user_avatar";
+import TaskDate from "../tasks/date";
 
 export default function ProjectPage(props) {
     function addTaskClickHandler(e){
@@ -40,11 +41,12 @@ export default function ProjectPage(props) {
         page.addEventListener('click', createTask)
     }
     
-    function updateTaskHandler(e){
+    function updateTaskTitle(e){
         const input = e.target.parentElement
+        console.log(input.dataset)
         const onEnterKey = (e) => {
             if (e.keyCode === 13) {
-                props.updateTask({title:input.innerHTML, id:input.id});
+                props.updateTask({title:input.innerHTML, id:input.dataset.taskid});
 
                 input.removeEventListener('click', onEnterKey)
                 input.blur();
@@ -65,9 +67,9 @@ export default function ProjectPage(props) {
                                     
                                     <span className="task-title column task">
                                         <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
-                                        <MutationObserver onContentChange={updateTaskHandler}>
+                                        <MutationObserver onContentChange={updateTaskTitle}>
                                             <span
-                                                id={task.id}
+                                                data-taskid={task.id}
                                                 className="input" 
                                                 role="textbox" 
                                                 contentEditable
@@ -81,7 +83,9 @@ export default function ProjectPage(props) {
                                             </span>)
                                             : null}
                                     </span>
-                                    <span className="column">{task.dueDate}</span>
+                                    <span className="column">
+                                        <TaskDate task={task}/>
+                                    </span>
                                 </div>
                             })) : (
                                 <p>No tasks have been made for this project yet!</p>
