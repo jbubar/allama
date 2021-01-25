@@ -28,8 +28,15 @@ function headerTitle(props){
                 </div>
                 </div>)
         case "/tasks/:userId":
-            // return(<div>{props.users[props.match.params.userId]}'s Tasks</div>)
-            return (<div>tasks!</div>)
+            if(props.match.params.userId == props.currentUser?.id){
+                return (
+                    <div>My Tasks</div>
+                )
+            }
+            return(<div>{props.users[props.match.params.userId]?.fullName}'s Tasks</div>)
+            // console.log('props.users[props.match.params.userId]:', props.users[props.match.params.userId]?.fullName)
+
+            // return (<div>tasks!</div>)
         default:
             return (<div>Allama made a mistake... oops.</div>)
     }

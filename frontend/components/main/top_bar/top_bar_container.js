@@ -4,13 +4,9 @@ import { withRouter } from "react-router-dom";
 import TopBarNav from "./top_bar";
 
 const mapStateToProps = (state) => ({
-  users: selectTeamMembers(state),
+  users: state.entities.users,
   currentUser: state.entities.users[state.session.currentUserId],
   projects: state.entities.projects
 });
-
-// const mapDispatchToProps = dispatch => ({
-
-// })
 
 export default withRouter(connect(mapStateToProps)(TopBarNav));

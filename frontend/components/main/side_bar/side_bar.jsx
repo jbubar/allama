@@ -23,7 +23,7 @@ export default function SideBarNav(props) {
                     <span className="sidebar-icon"></span>
                     <span className="sidebar-nav-item" title="Home">Home</span>
                 </Link>
-                <Link to="/tasks">
+                <Link to={`/tasks/${props.userId}`}>
                     <span className="sidebar-icon"></span>
                     <span className="sidebar-nav-item" title="My Tasks">My Tasks</span>
                 </Link>
