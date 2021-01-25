@@ -3,11 +3,21 @@
     .assignee-menu{
         border-radius: 0;
         padding: 0; 
-        right: -9px;
+        right: -8px;
         top: 37px;
         min-width: 168px;
+        height: 144px;
+        overflow: scroll;
         .assignee-choices{
             padding: 0 16px;
         }
     }
+}
+
+//date
+.date{
+    border: none;
+    width: 130px;
+    font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
+    color: #303030;
 }

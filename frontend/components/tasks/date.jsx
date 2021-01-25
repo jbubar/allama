@@ -11,7 +11,7 @@ function Date({ task, updateTask }) {
     }
     return (
         <div>
-            <input 
+            <input className="date"
                 data-taskid={task.id}
                 type="date" 
                 value={date}
