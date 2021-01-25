@@ -1,0 +1,13 @@
+.assignee {
+    position: relative;
+    .assignee-menu{
+        border-radius: 0;
+        padding: 0; 
+        right: -9px;
+        top: 37px;
+        min-width: 168px;
+        .assignee-choices{
+            padding: 0 16px;
+        }
+    }
+}

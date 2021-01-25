@@ -3,6 +3,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import MutationObserver from 'react-mutation-observer';
 import UserAvatar from "../main/user_avatar";
 import TaskDate from "../tasks/date";
+import TaskAssignee from "../tasks/assignee";
 
 export default function ProjectPage(props) {
     function addTaskClickHandler(e){
@@ -77,11 +78,12 @@ export default function ProjectPage(props) {
                                         </MutationObserver>
                                     </span>
                                     <span className="column">
-                                        {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
+                                        {/* {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
                                             (<span>
                                                 <UserAvatar user={props.users[task.assigneeId]}/> {props.users[task.assigneeId].fullName} 
                                             </span>)
-                                            : null}
+                                            : null} */}
+                                        <TaskAssignee task={task}/>
                                     </span>
                                     <span className="column">
                                         <TaskDate task={task}/>
