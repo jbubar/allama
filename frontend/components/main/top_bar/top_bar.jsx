@@ -34,9 +34,6 @@ function headerTitle(props){
                 )
             }
             return(<div>{props.users[props.match.params.userId]?.fullName}'s Tasks</div>)
-            // console.log('props.users[props.match.params.userId]:', props.users[props.match.params.userId]?.fullName)
-
-            // return (<div>tasks!</div>)
         default:
             return (<div>Allama made a mistake... oops.</div>)
     }

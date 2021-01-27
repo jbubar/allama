@@ -44,7 +44,6 @@ export default function ProjectPage(props) {
     
     function updateTaskTitle(e){
         const input = e.target.parentElement
-        console.log(input.dataset)
         const onEnterKey = (e) => {
             if (e.keyCode === 13) {
                 props.updateTask({title:input.innerHTML, id:input.dataset.taskid});
