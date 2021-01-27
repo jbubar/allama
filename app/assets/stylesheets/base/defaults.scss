@@ -17,3 +17,30 @@ h1{
     font-size: 45px;
     line-height: 1.244;
 }
+
+.dropdown-menu{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 37px;
+    box-shadow: 0 0 0 1px rgba(111,119,130,.15),0 5px 20px 0 rgba(21,27,38,.08);
+    font-size: 13px;
+    background-color: white;
+    width: fit-content;
+    max-height: 80vh;
+    overflow: scroll;
+    .menu-item{
+        padding: 0 16px;
+        height: 36px;
+        line-height: 36px;
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .menu-item:hover{
+        background-color: #e8ecee;
+        cursor: pointer;
+    }
+}

@@ -23,7 +23,7 @@ function SearchComponent({ searchData, teamId, searchDB }) {
             <span style={{fontFamily: "Arial, FontAwesome"}}>&#xF002;</span>
             {showDropDown && 
                 <div
-                    className="dropdown-menu" 
+                    className="dropdown-menu search-menu" 
                     ref={dropDownRef}    
                 >
 

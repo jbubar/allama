@@ -1,5 +1,5 @@
 .tile-inline.project-tile{
-    border-radius: 12px;
+    border-radius: 6px;
     height: 24px;
     width: 24px;
     & > div{
@@ -12,5 +12,52 @@
         height: 12px;
         width: 12px;
     }
-    margin: 0 4px;
+    margin-right: 8px;
 }
+.dropdown-menu.search-menu{
+    width: 100%;
+    .menu-item > *{
+        background-color: none;
+    }
+}
+.project-menu-item{
+    display: flex;
+    align-items: center;
+}
+.search{
+        flex-grow: 1;
+        position: relative;
+        margin-left: 16px;
+        input{
+            float: right;
+        }
+        input.nav-circle-item{
+            width: 140px;
+            text-align: left;
+            border-color: #cbd4db;
+            border-radius: 16px;
+            border-style: solid;
+            border-width: 1px;
+            height: 32px;
+            padding: 0 16px 0 32px;
+            box-sizing: border-box;
+            color: #151b26;
+            transition: all .3s;
+        }
+        input:hover{
+            cursor: text;
+        }
+        input:focus{
+            outline: none;
+            width: 100%;
+            flex-grow: 1;
+        }
+        span {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6f7782;
+            font-size: 13px;
+        }
+    }

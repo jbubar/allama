@@ -4,8 +4,8 @@ export default function DropDown(props) {
     
     return (
         <div className="dropdown-menu">
-            <div>My Profile Settings...</div>
-            <div onClick={props.logout}>Log Out</div>
+            <div className="menu-item">My Profile Settings...</div>
+            <div className="menu-item" onClick={props.logout}>Log Out</div>
         </div>
     )
 }

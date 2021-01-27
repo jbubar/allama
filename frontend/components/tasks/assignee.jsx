@@ -27,7 +27,7 @@ function Assignee({ task, updateTask, users }) {
                 <div className="assignee-menu dropdown-menu" ref={menuRef}>
                     {Object.values(users).map(user => (
                         <div 
-                            className="assignee-choices" 
+                            className="menu-item" 
                             key={user.id} 
                             onClick={() => updateTaskHandler(user.id, task.id)}>
                             <UserAvatar user={user}/> {user.fullName} 

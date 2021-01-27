@@ -77,11 +77,6 @@ export default function ProjectPage(props) {
                                         </MutationObserver>
                                     </span>
                                     <span className="column">
-                                        {/* {((Object.keys(props.users).length > 0) && task.assigneeId) ? 
-                                            (<span>
-                                                <UserAvatar user={props.users[task.assigneeId]}/> {props.users[task.assigneeId].fullName} 
-                                            </span>)
-                                            : null} */}
                                         <TaskAssignee task={task}/>
                                     </span>
                                     <span className="column">

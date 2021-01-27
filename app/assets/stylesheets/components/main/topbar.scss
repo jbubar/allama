@@ -5,37 +5,7 @@
     width: 100%;
     height: 72px;
     padding: 0 24px;
-    .search{
-        position: relative;
-        input.nav-circle-item{
-            width: 140px;
-            text-align: left;
-            border-color: #cbd4db;
-            border-radius: 16px;
-            border-style: solid;
-            border-width: 1px;
-            height: 32px;
-            padding: 0 16px 0 32px;
-            box-sizing: border-box;
-            color: #151b26;
-            transition: all .3s;
-        }
-        input:hover{
-            cursor: text;
-        }
-        input:focus{
-            outline: none;
-            width: 420px;
-        }
-        span {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6f7782;
-            font-size: 13px;
-        }
-    }
+    
     .omni-btn{
         font-size: 16px;
 
@@ -106,29 +76,29 @@ h1:hover{
 }
 
 
-.dropdown-menu{
-    z-index: 2;
-    position: absolute;
-    top: 56px;
-    right: 24px;
-    border-radius: 4px;
-    box-shadow: 0 0 0 1px rgba(111,119,130,.15),0 5px 20px 0 rgba(21,27,38,.08);
-    font-size: 13px;
-    padding: 4px 0;
-    background-color: white;
-    div{
-        padding: 0 32px;
-        height: 36px;
-        line-height: 36px;
-        cursor: pointer;
-        box-sizing: border-box;
-        width: 100%;
-    }
-    div:hover{
-        background-color: #e8ecee;
-        cursor: pointer;
-    }
-}
+// .dropdown-menu{
+//     z-index: 2;
+//     position: absolute;
+//     top: 56px;
+//     right: 24px;
+//     border-radius: 4px;
+//     box-shadow: 0 0 0 1px rgba(111,119,130,.15),0 5px 20px 0 rgba(21,27,38,.08);
+//     font-size: 13px;
+//     padding: 4px 0;
+//     background-color: white;
+//     div{
+//         padding: 0 32px;
+//         height: 36px;
+//         line-height: 36px;
+//         cursor: pointer;
+//         box-sizing: border-box;
+//         width: 100%;
+//     }
+//     div:hover{
+//         background-color: #e8ecee;
+//         cursor: pointer;
+//     }
+// }
 .top-nav-title > div{
     display: flex;
     align-items: center;
