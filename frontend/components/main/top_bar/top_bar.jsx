@@ -3,6 +3,7 @@ import { COLORS, getInitials } from '../../../util/nav';
 import { RiMenuLine } from 'react-icons/ri';
 import { BsQuestion, BsPlus} from 'react-icons/bs';
 import DropDown from './top-bar-drop-down-container';
+import Search from './search'
 import { useClickOutside } from '../../../hooks/click_outside';
 import Icon from "../../home/icon.jsx" 
 
@@ -48,15 +49,8 @@ export default function TopBar(props) {
             <div  onClick={openSideNav} className="ham-nav-icon" hidden>
                 <RiMenuLine/>
             </div>
-            <div><h1 className="top-nav-title">{headerTitle(props)}</h1></div>
-            <div className="search">
-                <input 
-                    type="text" 
-                    placeholder="Search" 
-                    className="nav-circle-item"
-                />
-                <span style={{fontFamily: "Arial, FontAwesome"}}>&#xF002;</span>
-                </div>
+            <h1 className="top-nav-title">{headerTitle(props)}</h1>
+            <Search/>
             <div className="plus nav-circle-item omni-btn"><BsPlus/></div>
             <div className="question-mark nav-circle-item omni-btn"><BsQuestion/></div>
             {props.currentUser ? (

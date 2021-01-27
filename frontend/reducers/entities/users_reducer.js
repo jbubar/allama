@@ -11,11 +11,11 @@ const usersReducer = (oldState = {}, action) => {
     const newState = Object.assign({}, oldState)
     switch (action.type){
         case RECEIVE_CURRENT_USER:
-            return Object.assign({}, newState, action.payload.members);
+            return Object.assign({}, newState, action.payload.users);
         case RECEIVE_CURRENT_TEAM:
-            return Object.assign({}, newState, action.payload.members);
+            return Object.assign({}, newState, action.payload.users);
         case RECEIVE_CURRENT_PROJECT:
-            return Object.assign({}, newState, action.payload.members);
+            return Object.assign({}, newState, action.payload.users);
         case LOGOUT_CURRENT_USER:
             return {}
         default:

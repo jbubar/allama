@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { selectTeamMembers } from "../../../reducers/selectors";
 import { withRouter } from "react-router-dom";
 import TopBarNav from "./top_bar";
 

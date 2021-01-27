@@ -4,7 +4,7 @@ import ProjectPageContainer from './project_page_container'
 export default function project(props) {
     useEffect(() => {
         props.getProject(props.match.params.projectId)
-    }, [ProjectPageContainer])
+    }, [])
     return (
         <div className="project-page-container">
             <div className="task-legend">
