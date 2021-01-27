@@ -23,9 +23,7 @@ function headerTitle(props){
                     <Icon/>
                 </div>
                 <div className="project-name">
-                    { Object.keys(props.projects).length > 0 ?
-                        props.projects[props.match.params.projectId].name : null
-                    }
+                    {props.projects[props.match.params.projectId]?.name}
                 </div>
                 </div>)
         case "/tasks/:userId":

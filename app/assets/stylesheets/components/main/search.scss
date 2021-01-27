@@ -1,0 +1,16 @@
+.tile-inline.project-tile{
+    border-radius: 12px;
+    height: 24px;
+    width: 24px;
+    & > div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    svg{
+        height: 12px;
+        width: 12px;
+    }
+    margin: 0 4px;
+}
