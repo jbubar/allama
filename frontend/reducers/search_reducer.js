@@ -3,7 +3,7 @@ import { RECEIVE_SEARCH_DATA, CLEAR_SEARCH_DATA } from '../actions/search_action
 const searchReducer = (oldState = {}, action) => {
     switch(action.type){
         case RECEIVE_SEARCH_DATA:
-            return action.searchData;
+            return action.searchData || {};
         case CLEAR_SEARCH_DATA:
             return {};
         default:

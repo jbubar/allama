@@ -13,6 +13,8 @@ export const clearSearch = () => ({
 });
 
 export const searchDB = (query, teamId) => (dispatch) => {
-  return searchUtil(query, teamId)
-    .then(res => dispatch(receiveSearch(res.responseJSON)))
+  return searchUtil(query, teamId).then(searchData => {
+        console.log(searchData)
+        dispatch(receiveSearch(searchData))
+    })
 };
