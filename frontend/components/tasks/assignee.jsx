@@ -6,7 +6,7 @@ import { useClickOutside } from '../../hooks/click_outside';
 
 function Assignee({ task, updateTask, users }) {
     const [showMenu, setShowMenu] = useState(false)
-    const ref = useClickOutside(() => setShowMenu(false));
+    const menuRef = useClickOutside(() => setShowMenu(false));
      
 
 
@@ -24,7 +24,7 @@ function Assignee({ task, updateTask, users }) {
                 : ("click to assign")}
             </div>
             { showMenu &&
-                <div className="assignee-menu dropdown-menu" ref={ref}>
+                <div className="assignee-menu dropdown-menu" ref={menuRef}>
                     {Object.values(users).map(user => (
                         <div 
                             className="assignee-choices" 

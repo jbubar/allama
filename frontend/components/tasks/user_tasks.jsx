@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { COLORS } from "../../util/nav";
 import MutationObserver from 'react-mutation-observer';
 import { createTask, updateTask, removeTask } from "../../actions/task_actions";
+import TaskDate from "./date";
+
 
 
 function UserTasks(props) {
@@ -50,7 +52,7 @@ function UserTasks(props) {
                                 {props.projects[task.projectId] ? props.projects[task.projectId].name : null}
                             </Link>
                         </span>
-                        <span className="column">{task.dueDate}</span>
+                        <span className="column"><TaskDate task={task}/></span>
                     </div>
                 })) : (
                     <p>No tasks yet!</p>
