@@ -16,9 +16,8 @@
 }
 .dropdown-menu.search-menu{
     width: 100%;
-    .menu-item > *{
-        background-color: none;
-    }
+    border-radius: 4px;
+    padding: 4px 0;
 }
 .project-menu-item{
     display: flex;
@@ -28,11 +27,13 @@
         flex-grow: 1;
         position: relative;
         margin-left: 16px;
-        input{
-            float: right;
-        }
+        display: flex;
+        justify-content: flex-end;
+        // input{
+        //     float: right;
+        // }
         input.nav-circle-item{
-            width: 140px;
+            min-width: 140px;
             text-align: left;
             border-color: #cbd4db;
             border-radius: 16px;
@@ -43,11 +44,16 @@
             box-sizing: border-box;
             color: #151b26;
             transition: all .3s;
+            width: 100%;
         }
         input:hover{
             cursor: text;
         }
-        input:focus{
+        .search-input-wrapper{
+            position: relative;
+        }
+        .search-input-wrapper:focus-within{
+            all: unset;
             outline: none;
             width: 100%;
             flex-grow: 1;

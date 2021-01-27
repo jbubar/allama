@@ -4,6 +4,8 @@ import { COLORS } from "../../util/nav";
 import Icon from "./icon.jsx" 
 import UserTasks from '../tasks/user_tasks';
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import TaskDate from "../tasks/date";
+
 
 const Home = (props) => {
     return (
@@ -18,7 +20,7 @@ const Home = (props) => {
                             <Link to={`/projects/${task.projectId}`} className={`task-project ${COLORS[(task.projectId + 10) % 20]}`}>
                                 {props.projects[task.projectId] ? props.projects[task.projectId].name : null}
                             </Link>
-                            <p>{task.dueDate}</p>
+                            <TaskDate task={task}/>
                         </div>
                     })) : (
                         <p>No tasks assigned to me at the moment</p>

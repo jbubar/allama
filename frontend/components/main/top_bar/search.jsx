@@ -14,13 +14,15 @@ function SearchComponent({ searchData, teamId, searchDB }) {
     }
     return (
         <div className="search">
-            <input 
-                type="text" 
-                placeholder="Search" 
-                className="nav-circle-item"
-                onChange={handleInput}
-            />
-            <span style={{fontFamily: "Arial, FontAwesome"}}>&#xF002;</span>
+            <div className="search-input-wrapper">
+                <input 
+                    type="text" 
+                    placeholder="Search" 
+                    className="nav-circle-item"
+                    onChange={handleInput}
+                />
+                <span style={{fontFamily: "Arial, FontAwesome"}}>&#xF002;</span>
+            </div>
             {showDropDown && 
                 <div
                     className="dropdown-menu search-menu" 

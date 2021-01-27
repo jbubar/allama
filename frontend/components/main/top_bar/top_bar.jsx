@@ -64,7 +64,7 @@ export default function TopBar(props) {
                 <div ref={ref}>
                     <DropDown/>
                 </div>
-                }
+            }
         </nav>
     )
 }
