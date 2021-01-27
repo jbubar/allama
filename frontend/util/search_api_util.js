@@ -1,4 +1,4 @@
-export const doSearch = (query, teamId) =>
+export const searchUtil = (query, teamId) =>
   $.ajax({
     url: `/api/search/${query}`,
     method: "GET",
