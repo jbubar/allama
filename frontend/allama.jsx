@@ -6,7 +6,7 @@ import configureStore from './store';
 
 //TESTING
 import * as APISessionUtils from './util/session_api_util';
-import { doSearch } from './util/search_api_util';
+import { searchUtil } from './util/search_api_util';
 import * as action from './actions/session_actions';
 //END TESTING
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.store = store;
     window.action = action
-    window.search = doSearch;
+    window.search = searchUtil;
     //END TESTING
 })
 
