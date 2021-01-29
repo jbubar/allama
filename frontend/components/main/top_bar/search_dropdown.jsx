@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserAvatar from "../user_avatar";
 import Icon from "../../home/icon.jsx";
 import { COLORS } from "../../../util/nav";
+import { AiOutlineCheckCircle } from "react-icons/ai";
+
 
 
 
 export default function SearchDropDown({ searchData }) {
+    let emptySearch = true
     function displayUsers(users = null){
       if(users){
+        emptySearch = false;
         return(
           <>
             {Object.values(users).map(user => (
@@ -24,6 +28,7 @@ export default function SearchDropDown({ searchData }) {
     }
     function displayProjects(projects = null){
       if(projects){
+        emptySearch = false;
         return(
           <>
             {Object.values(projects).map(project => (
@@ -40,10 +45,27 @@ export default function SearchDropDown({ searchData }) {
         )
       }
     }
+    function displayTasks(tasks = null){
+      if(tasks){
+        emptySearch = false;
+        return(
+          <>
+            {Object.values(tasks).map(task => (
+              <Link to={`/projects/${task.projectId}`} className="menu-item task-menu-item">
+                <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
+                <div className="task-title">{task.title}</div>
+              </Link>
+            ))}
+          </>
+        )
+      }
+    }
     return (
       <>
-        {displayUsers(searchData.users)}
         {displayProjects(searchData.projects)}
+        {displayUsers(searchData.users)}
+        {displayTasks(searchData.tasks)}
+        {emptySearch && <div className="empty-results">No search results...</div>}
       </>
     );
 }
