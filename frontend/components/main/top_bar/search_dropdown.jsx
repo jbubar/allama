@@ -9,7 +9,7 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 
 
 export default function SearchDropDown({ searchData }) {
-    let emptySearch = true
+    let emptySearch = true;
     function displayUsers(users = null){
       if(users){
         emptySearch = false;
