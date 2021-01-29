@@ -8,10 +8,10 @@
 //section header is in the main.scss
 .home-task{
     border: 2px solid #e8ecee;
-    height: 26px;
-    line-height: 26px;
+    border-bottom: none;
+    height: 34px;
+    line-height: 34px;
     width: 100%;
-    border-radius: 8px;
     margin: 0 24px;
     cursor: pointer;
     display: flex;
@@ -21,18 +21,29 @@
         margin-right: auto;
     }
 }
+.home-task-list .home-task:first-child{
+    border-radius: 8px 8px 0 0;
+}
+.home-task-list .home-task:last-child{
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom: 2px solid #e8ecee;
+}
 .task-project{
     margin-left: auto;
     border-radius: 10px;
     color: #151b26;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1px 8px;
+    text-align: left;
+    white-space: nowrap;
+    max-width: 75px;
+    min-width: 1px;
     font-size: 12px;
     font-weight: 400;
     height: 20px;
     line-height: 20px;
-    overflow: hidden;
-    padding: 0 8px;
-    text-align: left;
-    white-space: nowrap;
 }
 .home-task > * {
     margin: 0 8px;
@@ -83,10 +94,31 @@
         width: 100%;
     }
 }
+.new-proj-square{
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px dashed;
+    box-sizing: border-box;
+    color: #9ca6af;
+    display: flex;
+    justify-content: center;
+    svg{
+        height: 2.5em;
+        stroke-width: .6;
+        width: 2.5em;
+    }
+}
 .project-btn:hover {
     cursor: pointer;
     background: #f6f8f9;
     transform: translate3d(0, -4px, 0);
+    .new-proj-square{
+        color: #777f85;
+    }
 }
 
 

@@ -5,6 +5,8 @@ import Icon from "./icon.jsx"
 import UserTasks from '../tasks/user_tasks';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import TaskDate from "../tasks/date";
+import { BsPlus } from 'react-icons/bs';
+
 
 
 const Home = (props) => {
@@ -12,7 +14,7 @@ const Home = (props) => {
         <div className="home-inner">
             <section className="tasks home-section">
                 <h4 className="section-header">My Tasks</h4>
-                <div>
+                <div className="home-task-list">
                     { props.tasks ? ( props.tasks.map(task => {
                         if (task) return <div key={task.id} className="home-task">
                             <AiOutlineCheckCircle/>
@@ -30,8 +32,8 @@ const Home = (props) => {
             <section className="home-projects home-section">
                 <h4 className="section-header">Projects</h4>
                 <div>
-                    { props.projects ? (
-                        Object.values(props.projects).map(project => {
+                    { 
+                        Object.values(props.projects)?.map(project => {
                             if (project) return (
                                 <Link key={project.id} className="project-btn" to={`/projects/${project.id}`}>
                                     <div className={`project-tile ${COLORS[(project.id + 10) % 20]}`}>
@@ -41,9 +43,15 @@ const Home = (props) => {
                                 </Link>
                             )
                         })
-                    ) : (
-                        <p>No projects have been created yet</p>
-                    )}
+                    }
+                    <Link className="project-btn" to={`/home`}>
+                        <div className={`project-tile`}>
+                            <div className="new-proj-square">
+                                <BsPlus/>
+                            </div>
+                        </div>
+                        <span className="project-name">New Project</span>
+                    </Link>
                 </div>
             </section>
         </div>
