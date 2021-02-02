@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { COLORS, getInitials } from '../../../util/nav';
 import { RiMenuLine } from 'react-icons/ri';
-import { BsQuestion, BsPlus} from 'react-icons/bs';
+import { BsQuestion, BsPlus, BsChevronDown} from 'react-icons/bs';
 import DropDown from './top-bar-drop-down-container';
 import Search from './search'
 import { useClickOutside } from '../../../hooks/click_outside';
 import Icon from "../../home/icon.jsx" 
+import ProjectMenu from "../side_bar/side_bar_project_menu";
+
 
 
 function openSideNav(e){
@@ -18,14 +20,26 @@ function headerTitle(props){
         case "/home":
             return(<div>Home</div>)
         case "/projects/:projectId":
-            return (<div>
-                <div className={`project-tile tile-small ${COLORS[(parseInt(props.match.params.projectId) + 10) % 20]}`}>
-                    <Icon/>
+            const [showProjMenu, setShowProjMenu] = useState(false);
+            const projMenuRef = useClickOutside(() => setShowProjMenu(false));
+            return (
+                <div className="proj-title-wrapper">
+                    <div className={`project-tile tile-small ${COLORS[(parseInt(props.match.params.projectId) + 10) % 20]}`}>
+                        <Icon/>
+                    </div>
+                    <div className="project-name">
+                        {props.projects[props.match.params.projectId]?.name}
+                    </div>
+                    <div className="nav-icon down-caret-icon" onClick={()=>{setShowProjMenu(true)}}>
+                        <BsChevronDown/>
+                    </div>
+                    {showProjMenu && 
+                        <div ref={projMenuRef} className="dropdown-menu proj-dropdown">
+                            <ProjectMenu/>
+                        </div>
+                    }
                 </div>
-                <div className="project-name">
-                    {props.projects[props.match.params.projectId]?.name}
-                </div>
-                </div>)
+            )
         case "/tasks/:userId":
             if(props.match.params.userId == props.currentUser?.id){
                 return (
@@ -44,7 +58,7 @@ export default function TopBar(props) {
     const openDropDown = () => setVisible(!visible);
     return (
         <nav className="topbar-container">
-            <div  onClick={openSideNav} className="ham-nav-icon" hidden>
+            <div  onClick={openSideNav} className="ham-icon nav-icon" hidden>
                 <RiMenuLine/>
             </div>
             <h1 className="top-nav-title">{headerTitle(props)}</h1>

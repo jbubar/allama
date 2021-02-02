@@ -36,21 +36,65 @@
     flex-direction: column;
     padding-bottom: 16px;
     border-bottom: 0.5px solid rgb(111, 119, 130);
-    a{
-        color: #cbd4db;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 400;
-        height: 32px;
-        line-height: 32px;
-        padding: 0 24px;
-    }
-    a:hover{
-        background-color: rgba(255,255,255,.2);
+}
+.sidebar-nav-item{
+    color: #cbd4db;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 24px;
+}
+.sidebar-nav-item:hover{
+    background-color: rgba(255,255,255,.2);
+    svg{
+        color: rgba(255,255,255,.5);
     }
 }
+.sidebar-proj-item-container{
+    position: relative;
+    .sidebar-proj-menu{
+        top: -4px;
+        right: auto;
+        left: 225px;
+    }
+}
+.sidebar-proj-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    svg{
+        width: 1.3em;
+        height: 1.3em;
+        color: rgba(255,255,255,.001);
+    }
+    svg:hover{
+        color: rgba(255,255,255,.9);
+    }
+}
+.sidebar-proj-item > div{
+    div:first-child{
+        margin-right: 8px;
+    }
+    display: flex;
+    align-items: center;
+
+    justify-content: left;
+    .proj-text{
+        width: 150px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+.proj-color-box-sml{
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+}
 .sidebar-team-list{
-    padding-top: 8px;
+    padding: 8px 0;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: normal;
     display : flex;

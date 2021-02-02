@@ -18,20 +18,21 @@ h1.top-nav-title {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 20px;
     font-weight: 500;
+    margin-bottom: 0;
     line-height: 28px;
     align-items: center;
     color: #151b26;
     flex: 0 1 auto;
     min-width: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    margin: 0 8px;
+    // overflow: hidden;
+    // white-space: nowrap;
+    // margin: 0 8px;
     margin-right: auto;
 }
 h1:hover{
     cursor: default;
 }
-.ham-nav-icon{
+.nav-icon{
     height: 36px;
     width: 36px;
     font-size: 20px;
@@ -39,9 +40,12 @@ h1:hover{
     border-radius: 6px;
     text-align: center;
 }
-.ham-nav-icon:hover{
+.nav-icon:hover{
     background-color: rgba(180,180,180,.2);
     cursor: pointer;
+}
+.down-caret-icon{
+    margin-left: 8px;
 }
 .avatar{
     position: relative;
@@ -79,12 +83,17 @@ h1:hover{
 .dropdown-menu.personal-menu{
     top: 56px;
     right: 24px;
-    border-radius: 4px;
-    padding: 4px 0;
     .menu-item{
         padding: 0 32px;
 
     }
+}
+.proj-title-wrapper{
+    position: relative;
+}
+.proj-dropdown.dropdown-menu{
+    top: 43px;
+    right: -1px;
 }
 .top-nav-title > div{
     display: flex;

@@ -1,6 +1,8 @@
 .assignee {
     position: relative;
     .assignee-menu{
+        padding: 0;
+        border-radius: 0;
         min-width: 180px;
         height: 144px;
         overflow: scroll;
