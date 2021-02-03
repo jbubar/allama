@@ -1,15 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {BsPencil, BsLink45Deg} from 'react-icons/bs';
 
-export default function ProjectMenu() {
+
+export default function ProjectMenu({ project, openModal }) {
     return (
         <div>
             <div className="menu-item">
-                Copy Project Link
+                <span className="menu-sub-icon"><BsPencil/></span>
+                <div>Edit Project</div>
             </div>
             <div className="menu-item">
-                Edit Project
+                <span className="menu-sub-icon"><BsLink45Deg/></span>
+                <div>Copy Project Link</div>
             </div>
-            <div className="menu-item">
+            <div className="dividing-line"></div>
+            <div className="menu-item delete-btn">
                 Delete Project
             </div>
         </div>
