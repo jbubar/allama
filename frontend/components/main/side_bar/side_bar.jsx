@@ -44,7 +44,7 @@ export default function SideBarNav(props) {
                 {
                     props.projects?.map((project) => {
                         return(
-                            <SidebarProjectItem project={project} />
+                            <SidebarProjectItem key={project.id} project={project} />
                         )
                     }) 
                 }

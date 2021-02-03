@@ -2,7 +2,7 @@ import React from 'react';
 import {BsPencil, BsLink45Deg} from 'react-icons/bs';
 
 
-export default function ProjectMenu({ project, openModal }) {
+export default function ProjectMenu() {
     return (
         <div>
             <div className="menu-item">

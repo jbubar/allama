@@ -1,7 +1,7 @@
 import React from 'react';
 import { GrClose } from 'react-icons/gr';
 
-export default function EditProjectModal({ project }) {
+export default function EditProjectModal() {
     return (
         <div className="modal-background">
             <div className="modal-container">
