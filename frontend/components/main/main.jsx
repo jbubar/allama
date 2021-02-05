@@ -5,6 +5,7 @@ import { Link, Switch, Route } from "react-router-dom";
 import TopBarContainer from './top_bar/top_bar_container';
 import ProjectContainer from '../projects/project_container';
 import TasksContainer from '../tasks/tasks_container';
+import ProjectModal from '../projects/edit_project_modal';
 
 export default function Main(props) {
     useEffect(() => {
@@ -19,6 +20,9 @@ export default function Main(props) {
     }, [SideBarContainer])
     return (
         <div className="main-page-container">
+            {props.showProjectModal && 
+                <ProjectModal projectId={props.modalProjectId}/>
+            }
             <SideBarContainer/>
             <div className="main-page">
                 <TopBarContainer />
