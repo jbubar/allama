@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import { useClickOutside } from '../../hooks/click_outside';
+import Assignee from '../tasks/assignee';
 
 function EditProjectModal(props) {
     const ref = useClickOutside(props.closeProjectModal)
@@ -22,7 +23,11 @@ function EditProjectModal(props) {
                     </label>
                     <div className="bottom">
                         <div>
-                            <div className="project-owner">project owner name</div>
+                            <Assignee 
+                                className="project-owner"
+                                project={props.project} 
+                                inputType="project"
+                            />
                         </div>
                         <div>
                             <input type="date" className="date" />
