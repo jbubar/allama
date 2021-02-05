@@ -8,10 +8,11 @@ function EditProjectModal(props) {
     console.log(props)
     return (
         <div className="modal-background">
+            <div className="modal-top-buffer"></div>
             <div className="modal-container" ref={ref}>
                 <header className="modal-header">
-                    <h1>Project details</h1>
-                    <div className="nav-icon exit">
+                    <h2>Project details</h2>
+                    <div className="nav-icon exit" onClick={props.closeProjectModal}>
                         <GrClose className="close" />
                     </div>
                 </header>
@@ -19,6 +20,7 @@ function EditProjectModal(props) {
                     <input type="text" name="" id=""/>
                 </form>
             </div>
+            <div className="modal-bottom-buffer"></div>
         </div>
     )
 }
