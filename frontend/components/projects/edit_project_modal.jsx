@@ -21,8 +21,12 @@ function EditProjectModal(props) {
                         <input type="text" title="Project name" value={props.project.name}/>
                     </label>
                     <div className="bottom">
-                        <div className="project-owner"></div>
-                        <input type="date" className="date" />
+                        <div>
+                            <div className="project-owner">project owner name</div>
+                        </div>
+                        <div>
+                            <input type="date" className="date" />
+                        </div>
                     </div>
                 </form>
             </div>

@@ -1,0 +1,10 @@
+.modal-container{
+    .bottom{
+        display: flex;
+        align-items: center;
+        height: 60px;
+    }
+    .bottom > *{
+        flex: 1;
+    }
+}
