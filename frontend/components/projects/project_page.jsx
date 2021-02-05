@@ -77,7 +77,7 @@ export default function ProjectPage(props) {
                                         </MutationObserver>
                                     </span>
                                     <span className="column">
-                                        <TaskAssignee task={task}/>
+                                        <TaskAssignee task={task} inputType="task"/>
                                     </span>
                                     <span className="column">
                                         <TaskDate task={task}/>

@@ -16,12 +16,12 @@ function openSideNav(e){
     e.currentTarget.setAttribute('hidden', null);
 }
 function headerTitle(props){
+    const [showProjMenu, setShowProjMenu] = useState(false);
+    const projMenuRef = useClickOutside(() => setShowProjMenu(false));
     switch(props.match.path){
         case "/home":
             return(<div>Home</div>)
         case "/projects/:projectId":
-            const [showProjMenu, setShowProjMenu] = useState(false);
-            const projMenuRef = useClickOutside(() => setShowProjMenu(false));
             return (
                 <div className="proj-title-wrapper">
                     <div className={`project-tile tile-small ${COLORS[(parseInt(props.match.params.projectId) + 10) % 20]}`}>

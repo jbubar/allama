@@ -4,32 +4,32 @@ import { updateTask } from "../../actions/task_actions";
 import UserAvatar from "../main/user_avatar";
 import { useClickOutside } from '../../hooks/click_outside';
 
-function Assignee({ task, updateTask, users }) {
+function Assignee(props) {
     const [showMenu, setShowMenu] = useState(false)
     const menuRef = useClickOutside(() => setShowMenu(false));
      
-
-
-    function updateTaskHandler(assigneeId, taskId){
-        updateTask({assignee_id: assigneeId, id: taskId});
+    function updateAssigneeHandler(assigneeId){
+        if(props.inputType === "task"){
+            props.updateTask({assignee_id: assigneeId, id: props.task.id});
+        }
         setShowMenu(false);
     }
     return (
         <div className="assignee">
             <div onClick={()=>(setShowMenu(!showMenu))}>
-            {((Object.keys(users).length > 0) && task.assigneeId) ? 
-                (<div>
-                    <UserAvatar user={users[task.assigneeId]}/> {users[task.assigneeId].fullName} 
+            {((Object.keys(props.users).length > 0) && props.task.assigneeId) ? 
+                (<div className="assignee-current">
+                    <UserAvatar user={props.users[props.task.assigneeId]}/> {props.users[props.task.assigneeId].fullName} 
                 </div>)
                 : ("click to assign")}
             </div>
             { showMenu &&
                 <div className="assignee-menu dropdown-menu" ref={menuRef}>
-                    {Object.values(users).map(user => (
+                    {Object.values(props.users).map(user => (
                         <div 
                             className="menu-item" 
                             key={user.id} 
-                            onClick={() => updateTaskHandler(user.id, task.id)}>
+                            onClick={() => updateAssigneeHandler(user.id)}>
                             <UserAvatar user={user}/> {user.fullName} 
                         </div>
                     ))}
@@ -41,7 +41,9 @@ function Assignee({ task, updateTask, users }) {
 
 const mapStateToProps = (state, ownProps) => ({
     task: ownProps.task,
-    users: state.entities.users
+    project: ownProps.project,
+    users: state.entities.users,
+    inputType: ownProps.inputType
 })
 
 const mapDispatchToProps = (dispatch) => ({
