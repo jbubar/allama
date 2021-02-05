@@ -17,7 +17,13 @@ function EditProjectModal(props) {
                     </div>
                 </header>
                 <form action="">
-                    <input type="text" name="" id=""/>
+                    <label><p>Name</p>
+                        <input type="text" title="Project name" value={props.project.name}/>
+                    </label>
+                    <div className="bottom">
+                        <div className="project-owner"></div>
+                        <input type="date" className="date" />
+                    </div>
                 </form>
             </div>
             <div className="modal-bottom-buffer"></div>

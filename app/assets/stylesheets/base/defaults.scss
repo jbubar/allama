@@ -3,6 +3,7 @@ body {
     color: #151b26;
     font-weight: 400;
     margin: 0;
+    letter-spacing: 0.02em; 
 }
 a {
     color: #0c0c0c;
@@ -43,4 +44,10 @@ h1{
         background-color: #e8ecee;
         cursor: pointer;
     }
+}
+.date{
+    border: none;
+    width: 124px;
+    font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
+    color: #303030;
 }
