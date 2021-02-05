@@ -21,9 +21,9 @@ export default function SidebarProjectItem({project}) {
             {showMenu && 
                 <div
                         className="dropdown-menu sidebar-proj-menu" 
-                        ref={ref}    
+                        ref={ref}   
                     >
-                    <ProjectMenu/>
+                    <ProjectMenu projectId={project.id} closeMenu={() => setShowMenu(false)}/>
                 </div>
             }
         </div>

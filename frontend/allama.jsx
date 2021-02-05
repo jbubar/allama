@@ -9,6 +9,8 @@ import * as APISessionUtils from './util/session_api_util';
 import { searchUtil } from './util/search_api_util';
 import { searchDB } from './actions/search_actions';
 import * as action from './actions/session_actions';
+import { openProjectModal, closeProjectModal } from "./actions/ui_actions.js";
+
 //END TESTING
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.store = store;
     window.searchUtil = searchUtil;
     window.search = searchDB;
+    window.openProjectModal = openProjectModal;
+    window.closeProjectModal = closeProjectModal;
     //END TESTING
 })
 

@@ -7,9 +7,9 @@ import ProjectContainer from '../projects/project_container';
 import TasksContainer from '../tasks/tasks_container';
 import ProjectModal from '../projects/edit_project_modal';
 
+
 export default function Main(props) {
     useEffect(() => {
-        //query the database for
         let teamId;
         if (props.currentUser){
             teamId = props.currentUser.teamId;

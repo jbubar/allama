@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import {BsPencil, BsLink45Deg} from 'react-icons/bs';
 import { openProjectModal } from "../../../actions/ui_actions.js"
 
-function ProjectMenu({ projectId }) {
+function ProjectMenu({ projectId, openProjectModal, closeMenu }) {
     return (
         <div>
-            <div className="menu-item" onClick={() => openProjectModal(projectId)}>
+            <div className="menu-item" onClick={() => {openProjectModal(projectId); closeMenu()}}>
                 <span className="menu-sub-icon"><BsPencil/></span>
                 <div>Edit Project</div>
             </div>
@@ -25,8 +25,9 @@ function ProjectMenu({ projectId }) {
 const mapStateToProps = (state, ownProps) => ({
     projectId: ownProps.projectId
 })
-const mapDispatchToProps = (dispatch) => ({
-    openProjectModal: (projectId) => dispatch(openProjectModal(projectId))
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    openProjectModal: (projectId) => dispatch(openProjectModal(projectId)),
+    closeMenu: ownProps.closeMenu
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectMenu)

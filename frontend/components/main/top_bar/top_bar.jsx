@@ -35,7 +35,7 @@ function headerTitle(props){
                     </div>
                     {showProjMenu && 
                         <div ref={projMenuRef} className="dropdown-menu proj-dropdown">
-                            <ProjectMenu/>
+                            <ProjectMenu projectId={props.match.params.projectId} closeMenu={()=>setShowProjMenu(false)}/>
                         </div>
                     }
                 </div>
