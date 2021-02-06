@@ -32,21 +32,21 @@ export const getProject = projectId => dispatch => {
 };
 
 export const createProject = (project) => (dispatch) => {
-  return APIProjectsUtils.createProject(project).then(
+  return APIProjectsUtil.createProject(project).then(
     (project) => dispatch(receiveProject(project)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   );
 };
 
 export const updateProject = (project) => (dispatch) => {
-  return APIProjectsUtils.updateProject(project).then(
+  return APIProjectsUtil.updateProject(project).then(
     (project) => dispatch(receiveProject(project)),
     (err) => dispatch(receiveErrors(err.responseJSON))
   );
 };
 
 export const removeProject = (projectId) => (dispatch) => {
-  return APIProjectsUtils.deleteProject(projectId).then(() =>
+  return APIProjectsUtil.deleteProject(projectId).then(() =>
     dispatch(deleteProject(projectId))
   );
 };
