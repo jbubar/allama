@@ -20,13 +20,13 @@ function Assignee(props) {
     }
     return (
         <div className="assignee">
-            <div onClick={()=>(setShowMenu(!showMenu))}>
+            { props.inputType === 'task' && <div onClick={()=>(setShowMenu(!showMenu))}>
             {((Object.keys(props.users).length > 0)) ? 
-                (<div className="assignee-current">
+                (<div className="user-current">
                     <UserAvatar user={props.users[props.currentAssigneeId]}/> {props.users[props.currentAssigneeId]?.fullName} 
                 </div>)
                 : ("click to assign")}
-            </div>
+            </div>}
             { showMenu &&
                 <div className="assignee-menu dropdown-menu" ref={menuRef}>
                     {Object.values(props.users).map(user => (

@@ -10,6 +10,7 @@ import { searchUtil } from './util/search_api_util';
 import { searchDB } from './actions/search_actions';
 import * as action from './actions/session_actions';
 import { openProjectModal, closeProjectModal } from "./actions/ui_actions.js";
+import {updateProject} from './actions/project_actions';
 
 //END TESTING
 
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.search = searchDB;
     window.openProjectModal = openProjectModal;
     window.closeProjectModal = closeProjectModal;
+    window.updateProject = updateProject;
     //END TESTING
 })
 
