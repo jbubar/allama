@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import MutationObserver from 'react-mutation-observer';
-import UserAvatar from "../main/user_avatar";
 import TaskDate from "../tasks/date";
 import TaskAssignee from "../tasks/assignee";
+import { useClickOutside } from '../../hooks/click_outside';
 
 export default function ProjectPage(props) {
+    const [newSection, setNewSection] = useState(false);
+    const newSectionRef = useClickOutside(()=>{
+        setNewSection(false)
+    })
     function addTaskClickHandler(e){
         const el = $(e.currentTarget)
         $("<div class='task-legend new-task'><span class='task-title column task'><span class='input new-input' role='textbox' contenteditable></span></span><span class='column'></span><span class='column'></span></div>")
@@ -93,7 +97,24 @@ export default function ProjectPage(props) {
                     <p>No tasks have been made for this project yet!</p>
                 )
                 }
-                <div className="add-section"><span>+</span> Add section</div>
+                {newSection && 
+                    <input 
+                        ref={newSectionRef}
+                        type="text"
+                        className="input new-section-input"
+                    />
+                }
+                <div 
+                    className="add-section"
+                    onClick={()=>{
+                        setNewSection(true);
+                        setTimeout(()=>{
+                            document.querySelector('.new-section-input').focus();
+                        }, 0)
+                    }}
+                >
+                    <span>+</span> Add section
+                </div>
             </div>
         </div>
     )
