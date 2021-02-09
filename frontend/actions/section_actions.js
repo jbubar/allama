@@ -1,4 +1,4 @@
-import * as APISectionUtil from "../util/section_api_util";
+import * as APISectionUtil from "../util/sections_api_util";
 
 export const RECEIVE_SECTION = "RECEIVE_SECTION";
 export const DELETE_SECTION = "DELETE_SECTION";

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ProjectPage from "./project_page";
 import { createTask, updateTask, removeTask } from "../../actions/task_actions";
+import { createSection, updateSection, removeSection } from "../../actions/section_actions";
 import { selectProjectTasks, selectProjectSections } from "../../reducers/selectors";
 import { withRouter } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => ({
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
   removeTask: (taskId) => dispatch(removeTask(taskId)),
+  createSection: (section) => dispatch(createSection(section))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectPage));

@@ -8,7 +8,7 @@ import { useClickOutside } from '../../hooks/click_outside';
 export default function ProjectPage(props) {
     const [newSection, setNewSection] = useState(false);
     const newSectionRef = useClickOutside(()=>{
-        setNewSection(false)
+        setTimeout(()=>setNewSection(false), 0);
     })
     function addTaskClickHandler(e){
         const el = $(e.currentTarget)
@@ -102,6 +102,9 @@ export default function ProjectPage(props) {
                         ref={newSectionRef}
                         type="text"
                         className="input new-section-input"
+                        onBlur={(e)=>{
+                            props.createSection({name: e.target.value, project_id: props.projectId})
+                        }}
                     />
                 }
                 <div 
