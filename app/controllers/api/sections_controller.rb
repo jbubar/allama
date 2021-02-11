@@ -24,11 +24,8 @@ class Api::SectionsController < ApplicationController
 
   def destroy
     @section = Section.find(params[:id])
-    if @section.update(section_params)
-      render 'api/sections/show'
-    else 
-      render json:  @section.errors.full_messages, status: :unprocessable_entity
-    end
+    @section.destroy
+    render 'api/sections/show'
   end
 
   private 

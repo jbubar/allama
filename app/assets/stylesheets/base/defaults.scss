@@ -52,6 +52,10 @@ h1{
     font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
     color: #303030;
 }
+.date:focus{
+    border-color: #9ca6af;
+    outline: 1px solid #9ca6af;
+}
 .btn{
     height: 36px;
     width: 36px;

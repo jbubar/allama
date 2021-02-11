@@ -105,7 +105,11 @@ function Section(props) {
                     </div>
                     {sectionMenu && 
                         <div className="dropdown-menu section-menu" ref={ref}>
-                            <SectionMenu rename={setEditable} closeMenu={()=>setSectionMenu(false)}/>
+                            <SectionMenu 
+                                rename={setEditable} 
+                                closeMenu={()=>setSectionMenu(false)}
+                                deleteSection={props.removeSection}
+                            />
                         </div>
                     }
                 </div>
@@ -146,11 +150,12 @@ const mapStateToProps = (state, ownProps) => ({
     section: ownProps.section,
     tasks: selectProjectTasks(state, ownProps.section.projectId)
 });
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
   removeTask: (taskId) => dispatch(removeTask(taskId)),
   updateSection: (section) => dispatch(updateSection(section)), 
+  removeSection: () => dispatch(removeSection(ownProps.section.id)), 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Section);

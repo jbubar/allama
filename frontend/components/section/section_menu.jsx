@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SectionMenu({ rename, closeMenu }) {
+export default function SectionMenu({ rename, closeMenu, deleteSection }) {
     return (
         <div>
             <div 
@@ -15,7 +15,12 @@ export default function SectionMenu({ rename, closeMenu }) {
             >
                 Rename section
             </div>
-            <div className="menu-item">
+            <div 
+                className="menu-item"
+                onClick={()=>{
+                    deleteSection();
+                }}
+            >
                 Delete section
             </div>
         </div>
