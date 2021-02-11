@@ -19,6 +19,7 @@ export default function SectionMenu({ rename, closeMenu, deleteSection }) {
                 className="menu-item"
                 onClick={()=>{
                     deleteSection();
+                    closeMenu();
                 }}
             >
                 Delete section
