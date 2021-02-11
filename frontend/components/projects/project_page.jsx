@@ -34,8 +34,6 @@ export default function ProjectPage(props) {
                         }}
                         onBlur={(e)=>{
                             props.createSection({name: e.target.value, project_id: props.projectId})
-                            console.log('props.projectId:', props.projectId)
-                            console.log('e.target.value:', e.target.value)
                         }}
                     />
                 }

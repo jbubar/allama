@@ -23,7 +23,6 @@ function EditProjectModal(props) {
     }, [])
     const updateProject = (type, val) => (e) => {
         e?.preventDefault();
-        console.log(type, val, props.project.id)
         props.updateProject({id: props.project.id, [type]: val})
     }
     return (
