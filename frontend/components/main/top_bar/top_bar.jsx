@@ -30,7 +30,7 @@ function headerTitle(props){
                     <div className="project-name">
                         {props.projects[props.match.params.projectId]?.name}
                     </div>
-                    <div className="btn down-caret-icon" onClick={()=>{setShowProjMenu(true)}}>
+                    <div className="btn btn-sml down-caret-icon" onClick={()=>{setShowProjMenu(true)}}>
                         <BsChevronDown/>
                     </div>
                     {showProjMenu && 

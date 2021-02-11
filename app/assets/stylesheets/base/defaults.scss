@@ -51,3 +51,30 @@ h1{
     font-family: gordita, Helvetica Neue, Helvetica, sans-serif;
     color: #303030;
 }
+.btn{
+    height: 36px;
+    width: 36px;
+    min-height: 36px;
+    min-width: 36px;
+    font-size: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        color: #6f7782;
+    }
+}
+.btn:hover{
+    background-color: rgba(180,180,180,.2);
+    cursor: pointer;
+    svg{
+        color: #151b26;
+    }
+}
+.btn-sml{
+    height: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    width: 28px;
+}

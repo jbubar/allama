@@ -5,6 +5,8 @@ import { BiDotsHorizontalRounded, BiCaretDown } from "react-icons/bi";
 import MutationObserver from 'react-mutation-observer';
 import TaskDate from "../tasks/date";
 import TaskAssignee from "../tasks/assignee";
+import SectionMenu from './section_menu';
+import { useClickOutside } from '../../hooks/click_outside';
 import { createTask, updateTask, removeTask } from "../../actions/task_actions";
 import { selectProjectTasks } from "../../reducers/selectors";
 import { updateSection, removeSection } from "../../actions/section_actions";
@@ -12,6 +14,9 @@ import { updateSection, removeSection } from "../../actions/section_actions";
 
 function Section(props) {
     const [editable, setEditable] = useState(false);
+    const [sectionMenu, setSectionMenu] = useState(false);
+    const ref = useClickOutside(() => setSectionMenu(false));
+
     function addTaskClickHandler(e){
         const el = $(e.currentTarget)
         $("<div class='task-legend new-task'><span class='task-title column task'><span class='input new-input' role='textbox' contenteditable></span></span><span class='column'></span><span class='column'></span></div>")
@@ -62,7 +67,12 @@ function Section(props) {
     return (
         <div key={props.section.id}>
             <div className="section-header">
-                <div className="btn"><BiCaretDown/></div>
+                {sectionMenu && 
+                    <div className="dropdown-menu" ref={ref}>
+                        <SectionMenu/>
+                    </div>
+                }
+                <div className="btn btn-sml"><BiCaretDown/></div>
                 { editable ? (
                     <input 
                         type="text"
@@ -84,7 +94,9 @@ function Section(props) {
                     </h4>
                 )
                 }
-                <div className="btn"><BiDotsHorizontalRounded/></div>
+                <div className="btn btn-sml" onClick={()=>setSectionMenu(true)}>
+                    <BiDotsHorizontalRounded className="dotdotdot"/>
+                </div>
             </div>
             <div>
                 { props.tasks ? ( props.tasks.filter(task => task.sectionId === props.section.id).map(task => {

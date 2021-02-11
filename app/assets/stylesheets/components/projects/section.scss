@@ -1,0 +1,13 @@
+.section-header{
+    .dotdotdot{
+        color: white;
+    }
+}
+.section-header:hover{
+    .dotdotdot{
+        color: #6f7782;
+    }
+    .btn:hover .dotdotdot{
+        color: #151b26;
+    }
+}
