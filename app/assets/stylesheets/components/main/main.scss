@@ -22,12 +22,17 @@
     align-items: center;
 }
 .section-header{
+    .section-name{
+        margin: 0 8px;
+    }
     align-items: center;
-    border-bottom: 2px solid #e8ecee;
     display: flex;
     height: 32px;
     margin-left: 24px;
     margin-right: 24px;
     padding: 8px 0;
     position: relative;
+}
+.home.section-header{
+    border-bottom: 2px solid #e8ecee;
 }

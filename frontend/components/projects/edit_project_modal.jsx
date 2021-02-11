@@ -32,7 +32,7 @@ function EditProjectModal(props) {
                 <div className="modal-container" >
                     <header className="modal-header">
                         <h2>Project details</h2>
-                        <div className="nav-icon exit" onClick={props.closeProjectModal}>
+                        <div className="btn exit" onClick={props.closeProjectModal}>
                             <GrClose className="close" />
                         </div>
                     </header>

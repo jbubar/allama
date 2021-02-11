@@ -31,17 +31,23 @@ h1.top-nav-title {
 h1:hover{
     cursor: default;
 }
-.nav-icon{
+.btn{
     height: 36px;
     width: 36px;
     font-size: 20px;
     line-height: 42px;
     border-radius: 6px;
     text-align: center;
+    svg{
+        color: #6f7782;
+    }
 }
-.nav-icon:hover{
+.btn:hover{
     background-color: rgba(180,180,180,.2);
     cursor: pointer;
+    svg{
+        color: #151b26;
+    }
 }
 .menu-item{
     display: flex;

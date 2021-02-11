@@ -30,7 +30,7 @@ function headerTitle(props){
                     <div className="project-name">
                         {props.projects[props.match.params.projectId]?.name}
                     </div>
-                    <div className="nav-icon down-caret-icon" onClick={()=>{setShowProjMenu(true)}}>
+                    <div className="btn down-caret-icon" onClick={()=>{setShowProjMenu(true)}}>
                         <BsChevronDown/>
                     </div>
                     {showProjMenu && 
@@ -58,7 +58,7 @@ export default function TopBar(props) {
     const openDropDown = () => setVisible(!visible);
     return (
         <nav className="topbar-container">
-            <div  onClick={openSideNav} className="ham-icon nav-icon" hidden>
+            <div  onClick={openSideNav} className="ham-icon btn" hidden>
                 <RiMenuLine/>
             </div>
             <h1 className="top-nav-title">{headerTitle(props)}</h1>

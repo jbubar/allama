@@ -20,7 +20,7 @@ export default function ProjectPage(props) {
                     <input 
                         ref={newSectionRef}
                         type="text"
-                        className="input new-section-input"
+                        className="input new-section section-name-input"
                         onChange={e=>{
                             const input = e.target
                             const onEnterKey = (e) => {
@@ -42,7 +42,7 @@ export default function ProjectPage(props) {
                     onClick={()=>{
                         setNewSection(true);
                         setTimeout(()=>{
-                            document.querySelector('.new-section-input').focus();
+                            document.querySelector('.new-section').focus();
                         }, 0)
                     }}
                 >

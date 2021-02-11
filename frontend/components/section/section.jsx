@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import { BiDotsHorizontalRounded, BiCaretDown } from "react-icons/bi";
 import MutationObserver from 'react-mutation-observer';
 import TaskDate from "../tasks/date";
 import TaskAssignee from "../tasks/assignee";
@@ -10,6 +11,7 @@ import { updateSection, removeSection } from "../../actions/section_actions";
 
 
 function Section(props) {
+    const [editable, setEditable] = useState(false);
     function addTaskClickHandler(e){
         const el = $(e.currentTarget)
         $("<div class='task-legend new-task'><span class='task-title column task'><span class='input new-input' role='textbox' contenteditable></span></span><span class='column'></span><span class='column'></span></div>")
@@ -59,7 +61,31 @@ function Section(props) {
     }
     return (
         <div key={props.section.id}>
-            <h4 className="section-header">{props.section.name}</h4>
+            <div className="section-header">
+                <div className="btn"><BiCaretDown/></div>
+                { editable ? (
+                    <input 
+                        type="text"
+                        className="input section-name-input edit-section"
+                        value={props.section.name}
+                        onBlur={()=>setEditable(false)}
+                    />
+                ) : (
+                    <h4 
+                        className="section-name"
+                        onClick={()=>{
+                            setEditable(true)
+                            setTimeout(()=>{
+                                document.querySelector('input.edit-section').focus();
+                            }, 0)
+                        }}
+                    >
+                        {props.section.name}
+                    </h4>
+                )
+                }
+                <div className="btn"><BiDotsHorizontalRounded/></div>
+            </div>
             <div>
                 { props.tasks ? ( props.tasks.filter(task => task.sectionId === props.section.id).map(task => {
                     if (task) return <div key={task.id} className="task-legend">

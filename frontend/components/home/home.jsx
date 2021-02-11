@@ -13,7 +13,7 @@ const Home = (props) => {
     return (
         <div className="home-inner">
             <section className="tasks home-section">
-                <h4 className="section-header">My Tasks</h4>
+                <h4 className="section-header home">My Tasks</h4>
                 <div className="home-task-list">
                     { props.tasks ? ( props.tasks.map(task => {
                         if (task) return <div key={task.id} className="home-task">
@@ -34,7 +34,7 @@ const Home = (props) => {
                 </div>
             </section>
             <section className="home-projects home-section">
-                <h4 className="section-header">Projects</h4>
+                <h4 className="section-header home">Projects</h4>
                 <div>
                     { 
                         Object.values(props.projects)?.map(project => {
