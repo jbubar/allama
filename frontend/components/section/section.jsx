@@ -15,6 +15,7 @@ import { updateSection, removeSection } from "../../actions/section_actions";
 function Section(props) {
     const [editable, setEditable] = useState(false);
     const [sectionMenu, setSectionMenu] = useState(false);
+    const [showTasks, setShowTasks] = useState(true);
     const [sectionName, setSectionName] = useState(props.section.name);
     const ref = useClickOutside(() => setSectionMenu(false));
 
@@ -68,7 +69,12 @@ function Section(props) {
     return (
         <div key={props.section.id}>
             <div className="section-header">
-                <div className="btn btn-sml"><BiCaretDown/></div>
+                <div 
+                    className={`btn btn-sml ${!showTasks ? 'rotate' : ''}`}
+                    onClick={()=>setShowTasks(!showTasks)}
+                >
+                    <BiCaretDown/>
+                </div>
                 { editable ? (
                     <input 
                         type="text"
@@ -114,33 +120,35 @@ function Section(props) {
                     }
                 </div>
             </div>
-            <div>
-                { props.tasks ? ( props.tasks.filter(task => task.sectionId === props.section.id).map(task => {
-                    if (task) return <div key={task.id} className="task-legend">
-                        
-                        <span className="task-title column task">
-                            <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
-                            <MutationObserver onContentChange={updateTaskTitle}>
-                                <span
-                                    data-taskid={task.id}
-                                    className="input" 
-                                    role="textbox" 
-                                    contentEditable
-                                >{task.title}</span>
-                            </MutationObserver>
-                        </span>
-                        <span className="column">
-                            <TaskAssignee task={task} inputType="task"/>
-                        </span>
-                        <span className="column">
-                            <TaskDate task={task}/>
-                        </span>
-                    </div>
-                })) : (
-                    <p>No tasks have been made for this project yet!</p>
-                )}
-                <div className="add-task" onClick={addTaskClickHandler} id={props.section.id}>Add task...</div>
-            </div>
+            { showTasks &&
+                <div>
+                    { props.tasks ? ( props.tasks.filter(task => task.sectionId === props.section.id).map(task => {
+                        if (task) return <div key={task.id} className="task-legend">
+                            
+                            <span className="task-title column task">
+                                <AiOutlineCheckCircle className='check-icon' onClick={() => props.removeTask(task.id)}/>
+                                <MutationObserver onContentChange={updateTaskTitle}>
+                                    <span
+                                        data-taskid={task.id}
+                                        className="input" 
+                                        role="textbox" 
+                                        contentEditable
+                                    >{task.title}</span>
+                                </MutationObserver>
+                            </span>
+                            <span className="column">
+                                <TaskAssignee task={task} inputType="task"/>
+                            </span>
+                            <span className="column">
+                                <TaskDate task={task}/>
+                            </span>
+                        </div>
+                    })) : (
+                        <p>No tasks have been made for this project yet!</p>
+                    )}
+                    <div className="add-task" onClick={addTaskClickHandler} id={props.section.id}>Add task...</div>
+                </div>
+            }
         </div>
     )
 }

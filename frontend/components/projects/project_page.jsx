@@ -33,7 +33,9 @@ export default function ProjectPage(props) {
                             input.addEventListener('keydown', onEnterKey)
                         }}
                         onBlur={(e)=>{
-                            props.createSection({name: e.target.value, project_id: props.projectId})
+                            if(e.target.value?.length > 0){
+                                props.createSection({name: e.target.value, project_id: props.projectId})
+                            }
                         }}
                     />
                 }
