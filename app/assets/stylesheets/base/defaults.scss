@@ -32,6 +32,7 @@ h1{
     font-size: 13px;
     background-color: white;
     width: fit-content;
+    min-width: 180px;
     .menu-item{
         padding: 0 16px;
         height: 36px;
@@ -77,4 +78,7 @@ h1{
     min-height: 28px;
     min-width: 28px;
     width: 28px;
+}
+.relative{
+    position: relative;
 }

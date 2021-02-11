@@ -2,8 +2,13 @@ import React from 'react'
 
 export default function SectionMenu() {
     return (
-        <div className="menu-item">
-            Hey!!!
+        <div>
+            <div className="menu-item">
+                Rename section
+            </div>
+            <div className="menu-item">
+                Delete section
+            </div>
         </div>
     )
 }

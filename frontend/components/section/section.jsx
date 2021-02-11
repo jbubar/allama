@@ -67,11 +67,6 @@ function Section(props) {
     return (
         <div key={props.section.id}>
             <div className="section-header">
-                {sectionMenu && 
-                    <div className="dropdown-menu" ref={ref}>
-                        <SectionMenu/>
-                    </div>
-                }
                 <div className="btn btn-sml"><BiCaretDown/></div>
                 { editable ? (
                     <input 
@@ -94,8 +89,15 @@ function Section(props) {
                     </h4>
                 )
                 }
-                <div className="btn btn-sml" onClick={()=>setSectionMenu(true)}>
-                    <BiDotsHorizontalRounded className="dotdotdot"/>
+                <div className="relative">
+                    <div className="btn btn-sml" onClick={()=>setSectionMenu(true)}>
+                        <BiDotsHorizontalRounded className="dotdotdot"/>
+                    </div>
+                    {sectionMenu && 
+                        <div className="dropdown-menu section-menu" ref={ref}>
+                            <SectionMenu/>
+                        </div>
+                    }
                 </div>
             </div>
             <div>
