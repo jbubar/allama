@@ -48,7 +48,11 @@ function UserTasks(props) {
                             </MutationObserver>
                         </span>
                         <span className="column">
-                            <Link to={`/projects/${task.projectId}`} className={`task-project ${COLORS[(task.projectId + 10) % 20]}`}>
+                            <Link 
+                                to={`/projects/${task.projectId}`} 
+                                title={props.projects[task.projectId]?.name} 
+                                className={`task-project ${COLORS[(task.projectId + 10) % 20]}`}
+                            >
                                 {props.projects[task.projectId]?.name.toString()}
                             </Link>
                         </span>
