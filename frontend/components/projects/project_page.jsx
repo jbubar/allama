@@ -52,7 +52,7 @@ export default function ProjectPage(props) {
             if (e.keyCode === 13) {
                 props.updateTask({title:input.innerHTML, id:input.dataset.taskid});
 
-                input.removeEventListener('click', onEnterKey)
+                input.removeEventListener('keydown', onEnterKey)
                 input.blur();
             }
         }
@@ -102,6 +102,17 @@ export default function ProjectPage(props) {
                         ref={newSectionRef}
                         type="text"
                         className="input new-section-input"
+                        onChange={e=>{
+                            const input = e.target
+                            const onEnterKey = (e) => {
+                                if (e.keyCode === 13) {
+                                    input.removeEventListener('keydown', onEnterKey)
+                                    input.blur();
+                                    setNewSection(false);
+                                }
+                            }
+                            input.addEventListener('keydown', onEnterKey)
+                        }}
                         onBlur={(e)=>{
                             props.createSection({name: e.target.value, project_id: props.projectId})
                         }}

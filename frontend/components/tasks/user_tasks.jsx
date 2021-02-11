@@ -49,7 +49,7 @@ function UserTasks(props) {
                         </span>
                         <span className="column">
                             <Link to={`/projects/${task.projectId}`} className={`task-project ${COLORS[(task.projectId + 10) % 20]}`}>
-                                {props.projects[task.projectId]?.name}
+                                {props.projects[task.projectId]?.name.toString()}
                             </Link>
                         </span>
                         <span className="column"><TaskDate task={task}/></span>
