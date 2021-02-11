@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { BiDotsHorizontalRounded, BiCaretDown } from "react-icons/bi";
+import { BsPlus } from 'react-icons/bs';
 import MutationObserver from 'react-mutation-observer';
 import TaskDate from "../tasks/date";
 import TaskAssignee from "../tasks/assignee";
@@ -19,8 +20,13 @@ function Section(props) {
     const [sectionName, setSectionName] = useState(props.section.name);
     const ref = useClickOutside(() => setSectionMenu(false));
 
-    function addTaskClickHandler(e){
-        const el = $(e.currentTarget)
+    const addTaskClickHandler = (position) => (e) => {
+        let el = $(e.currentTarget)
+        if(position === "end"){
+            el = $(e.currentTarget)
+        } else {
+            el = $(e.currentTarget).parent().next().children().last();
+        }
         $("<div class='task-legend new-task'><span class='task-title column task'><span class='input new-input' role='textbox' contenteditable></span></span><span class='column'></span><span class='column'></span></div>")
         .insertBefore(el)
 
@@ -105,6 +111,9 @@ function Section(props) {
                     </h4>
                 )
                 }
+                <div className="btn btn-sml" onClick={addTaskClickHandler("start")}>
+                        <BsPlus className="dotdotdot"/>
+                </div>
                 <div className="relative">
                     <div className="btn btn-sml" onClick={()=>setSectionMenu(true)}>
                         <BiDotsHorizontalRounded className="dotdotdot"/>
@@ -146,7 +155,7 @@ function Section(props) {
                     })) : (
                         <p>No tasks have been made for this project yet!</p>
                     )}
-                    <div className="add-task" onClick={addTaskClickHandler} id={props.section.id}>Add task...</div>
+                    <div className="add-task" onClick={addTaskClickHandler("end")} id={props.section.id}>Add task...</div>
                 </div>
             }
         </div>
