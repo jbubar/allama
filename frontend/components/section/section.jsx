@@ -15,6 +15,7 @@ import { updateSection, removeSection } from "../../actions/section_actions";
 function Section(props) {
     const [editable, setEditable] = useState(false);
     const [sectionMenu, setSectionMenu] = useState(false);
+    const [sectionName, setSectionName] = useState(props.section.name);
     const ref = useClickOutside(() => setSectionMenu(false));
 
     function addTaskClickHandler(e){
@@ -72,19 +73,28 @@ function Section(props) {
                     <input 
                         type="text"
                         className="input section-name-input edit-section"
-                        value={props.section.name}
-                        onBlur={()=>setEditable(false)}
+                        value={sectionName}
+                        onBlur={(e)=>{
+                            props.updateSection({
+                                id: props.section.id, 
+                                name: e.target.value
+                            })
+                            setEditable(false)
+                        }}
+                        onChange={e=>{
+                            setSectionName(e.target.value)
+                            const input = e.target;
+                            const onEnterKey = (e) => {
+                                if (e.keyCode === 13) {
+                                    input.removeEventListener('keydown', onEnterKey)
+                                    input.blur();
+                                }
+                            }
+                            input.addEventListener('keydown', onEnterKey)
+                        }}
                     />
                 ) : (
-                    <h4 
-                        className="section-name"
-                        onClick={()=>{
-                            setEditable(true)
-                            setTimeout(()=>{
-                                document.querySelector('input.edit-section').focus();
-                            }, 0)
-                        }}
-                    >
+                    <h4 className="section-name">
                         {props.section.name}
                     </h4>
                 )
@@ -95,7 +105,7 @@ function Section(props) {
                     </div>
                     {sectionMenu && 
                         <div className="dropdown-menu section-menu" ref={ref}>
-                            <SectionMenu/>
+                            <SectionMenu rename={setEditable} closeMenu={()=>setSectionMenu(false)}/>
                         </div>
                     }
                 </div>
@@ -140,6 +150,7 @@ const mapDispatchToProps = (dispatch) => ({
   createTask: (task) => dispatch(createTask(task)),
   updateTask: (task) => dispatch(updateTask(task)),
   removeTask: (taskId) => dispatch(removeTask(taskId)),
+  updateSection: (section) => dispatch(updateSection(section)), 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Section);
