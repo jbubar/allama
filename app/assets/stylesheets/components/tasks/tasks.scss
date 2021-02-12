@@ -1,5 +1,7 @@
 .assignee {
     position: relative;
+    display: flex;
+    align-items: center;
     .assignee-menu{
         padding: 0;
         border-radius: 0;
