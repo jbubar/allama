@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute, HomeRoute } from '../util/routes_util';
 import SplashPage from './splash/splash';
 import ErrorPage from './error-page';
 import { Route, Switch } from 'react-router-dom';
+import NewProjectPage from './projects/new_project_page';
 
 const App = () => {
     return(
@@ -16,6 +17,7 @@ const App = () => {
                 <AuthRoute exact path="/signup" component={SignupFormContainer} />
                 <HomeRoute exact path="/" />
                 <ProtectedRoute path="/home" component={MainContainer} />
+                <ProtectedRoute exact path="/projects/new" component={NewProjectPage} />
                 <ProtectedRoute path="/projects/:projectId" component={MainContainer} />
                 <ProtectedRoute path="/tasks/:userId" component={MainContainer} />
                 <Route component={ErrorPage} />

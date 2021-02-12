@@ -1,0 +1,103 @@
+header.new-proj{
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding-left: 24px;
+}
+.blue-background {
+    background-image: url('https://d3ki9tyy5l5ruj.cloudfront.net/obj/2980c2fafc708e6d514a0bfabcf4626931935f21/new-project-background-top.png');
+    height: 100%;
+    flex: 1;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .btn.dark-bgd{
+        svg {
+            height: .8em;
+            & > *{
+                stroke-width: 2.2;
+                stroke: white;
+            }
+        }
+    }
+}
+.header-left{
+    width: 800px;
+}
+.new-proj-page-contain{
+    display: flex;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    form{
+        min-width: 400px;
+        margin: 0 64px;
+        h2{
+            font-size: 32px;
+            font-weight: 300;
+            margin-top: 24px;
+        }
+        input.new-proj{
+            background-color: #f6f8f9;
+            border-color: #cbd4db;
+            border-radius: 0;
+            border-style: solid;
+            border-width: 0 0 1px;
+            font-size: 16px;
+            outline: none;
+            padding-left: 4px;
+            margin-bottom: 48px;
+        }
+        .new-proj-btn{
+            all: unset;
+            width: 100%;
+            background: #14aaf5;
+            color: #fff;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .new-proj-btn:hover{
+            background: #129ce1;
+        }
+        input[disabled].new-proj-btn{
+            background: #f6f6f6;
+            box-shadow: 0 0 2px #9ca6af;
+            border-radius: 6px;
+            color: #9ca6af;
+        }
+
+    }
+    .example-proj-img{
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #cbd4db;
+        border-right: none;
+        box-shadow: 0 5px 20px 0 rgba(21, 27, 38, .08);
+        overflow: hidden;
+        height: fit-content;
+        position: relative;
+        .project-name-preview{
+            position: absolute;
+            top: 15px;
+            left: 77px;
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 190px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    
+}
+@media only screen and (max-width: 900px) {
+    .hide-in-mobile{
+        display: none;
+    }
+    .new-proj-page-contain{
+        justify-content: center;
+    }
+}
