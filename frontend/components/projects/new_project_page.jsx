@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {BiArrowBack} from 'react-icons/bi';
 import {withRouter} from 'react-router-dom';
+import { createProject } from "../../actions/project_actions";
 
 function NewProjectPage(props) {
     const [projectName, setProjectName] = useState("")
@@ -18,7 +19,20 @@ function NewProjectPage(props) {
                 </div>
             </header>
             <div className="new-proj-page-contain">
-                <form onSubmit={(e=>console.log(e))}>
+                <form onSubmit={(e)=>{
+                        console.log({
+                            name: projectName,
+                            team_id: props.teamId,
+                            owner_id: props.currentUserId,
+                        })
+                        e.preventDefault();
+                        props.createProject({
+                            name: projectName,
+                            team_id: props.teamId,
+                            owner_id: props.currentUserId,
+                        }).then(el => console.log(el))
+                    }}
+                >
                     <h2 className="new-proj">New project</h2>
                     <label><p>Project name</p>
                         <input
@@ -45,9 +59,13 @@ function NewProjectPage(props) {
         </div>
     )
 }
-
-const mapDispatchToProps = (dispatch) => ({
-
+const mapStateToProps = (state) => ({
+    currentUserId: state.session.currentUserId,
+    teamId: state.entities.team.id
 })
 
-export default withRouter(connect(null, mapDispatchToProps)(NewProjectPage))
+const mapDispatchToProps = (dispatch) => ({
+    createProject: project => dispatch(createProject(project)),
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NewProjectPage))

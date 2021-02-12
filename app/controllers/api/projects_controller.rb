@@ -10,7 +10,10 @@ class Api::ProjectsController < ApplicationController
   end
   
   def create
-    @project = Project.new(project_params)
+    name = params[:project][:name]
+    owner_id = params[:project][:owner_id]
+    team_id = User.find(owner_id).team_id
+    @project = Project.new({name: name, owner_id: owner_id, team_id: team_id})
     if @project.save
       render "api/projects/show"
     else
@@ -31,10 +34,5 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     render 'api/projects/show'
-  end
-  
-  private
-  def project_params
-    params.require(:project).permit(:name, :description, :due_date, :owner)
   end
 end
