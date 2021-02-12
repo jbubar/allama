@@ -6,7 +6,17 @@ import {withRouter} from 'react-router-dom';
 import { createProject } from "../../actions/project_actions";
 
 function NewProjectPage(props) {
-    const [projectName, setProjectName] = useState("")
+    const [projectName, setProjectName] = useState("");
+    function handleSubmit(e){
+        e.preventDefault();
+        props.createProject({
+            name: projectName,
+            team_id: props.teamId,
+            owner_id: props.currentUserId,
+        }).then(res => {
+            props.history.push(`/projects/${res.project.id}`)
+        })
+    }
     return (
         <div>
             <header className="new-proj relative">
@@ -19,19 +29,7 @@ function NewProjectPage(props) {
                 </div>
             </header>
             <div className="new-proj-page-contain">
-                <form onSubmit={(e)=>{
-                        console.log({
-                            name: projectName,
-                            team_id: props.teamId,
-                            owner_id: props.currentUserId,
-                        })
-                        e.preventDefault();
-                        props.createProject({
-                            name: projectName,
-                            team_id: props.teamId,
-                            owner_id: props.currentUserId,
-                        }).then(el => console.log(el))
-                    }}
+                <form onSubmit={handleSubmit}
                 >
                     <h2 className="new-proj">New project</h2>
                     <label><p>Project name</p>
