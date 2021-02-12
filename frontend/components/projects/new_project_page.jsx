@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { GrClose } from 'react-icons/gr';
 import {BiArrowBack} from 'react-icons/bi';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 function NewProjectPage(props) {
     const [projectName, setProjectName] = useState("")
@@ -18,7 +18,7 @@ function NewProjectPage(props) {
                 </div>
             </header>
             <div className="new-proj-page-contain">
-                <form action="">
+                <form onSubmit={(e=>console.log(e))}>
                     <h2 className="new-proj">New project</h2>
                     <label><p>Project name</p>
                         <input

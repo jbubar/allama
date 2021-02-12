@@ -48,7 +48,7 @@ const Home = (props) => {
                             )
                         })
                     }
-                    <Link className="project-btn" to={`/home`}>
+                    <Link className="project-btn" to="/projects/new">
                         <div className={`project-tile`}>
                             <div className="new-proj-square">
                                 <BsPlus/>
