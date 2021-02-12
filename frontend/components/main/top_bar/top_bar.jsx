@@ -7,6 +7,7 @@ import Search from './search'
 import { useClickOutside } from '../../../hooks/click_outside';
 import Icon from "../../home/icon.jsx" 
 import ProjectMenu from "../side_bar/side_bar_project_menu";
+import {Link} from "react-router-dom";
 
 
 
@@ -63,7 +64,7 @@ export default function TopBar(props) {
             </div>
             <h1 className="top-nav-title">{headerTitle(props)}</h1>
             <Search/>
-            <div className="plus nav-circle-item omni-btn"><BsPlus/></div>
+            <Link to="/projects/new" className="plus nav-circle-item omni-btn"><BsPlus/></Link>
             <div className="question-mark nav-circle-item omni-btn"><BsQuestion/></div>
             {props.currentUser ? (
                 <div 
