@@ -49,6 +49,17 @@ export default function SideBarNav(props) {
                     }) 
                 }
             </section>
+            <section className="links">
+                <a href="https://github.com/jbubar" target="_blank">
+                    <img src={window.githubURL} alt="Github icon that links to josh bubar's github profile"/>
+                </a>
+                <a href="https://www.linkedin.com/in/jbubar/" target="_blank">
+                    <img src={window.linkedinImgURL} alt="Linked In icon linking to Josh Bubar's linked in"/>
+                </a>
+                <a href="https://angel.co/u/jbubar" target="_blank">
+                    <img src={window.angellistURL} alt="Angel List icon linking to Josh Bubar's Angel List"/>
+                </a>
+            </section>
         </nav>
     )
 }
