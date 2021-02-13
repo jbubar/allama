@@ -5,6 +5,9 @@ body {
     margin: 0;
     letter-spacing: 0.02em; 
 }
+.shaddow{
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2), 0 1px 4px 0 rgba(21, 27, 38, .08);
+}
 a {
     color: #0c0c0c;
     text-decoration: none;

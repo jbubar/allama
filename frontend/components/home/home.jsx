@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from "react-router-dom";
 import { COLORS } from "../../util/nav";
 import Icon from "./icon.jsx" 
@@ -10,6 +10,22 @@ import { BsPlus } from 'react-icons/bs';
 
 
 const Home = (props) => {
+    const scrolled = (elem) => () => {
+        const nav = document.querySelector('.topbar-container')
+        if(elem.scrollTop === 0){
+            nav.classList.remove('shaddow')
+        } else {
+            nav.classList.add('shaddow')
+        }
+    }
+    useEffect(() => {
+        const page = document.querySelector('.page-inner');
+        page.addEventListener('scroll', scrolled(page));
+        console.log(page.scrollTop)
+        return () => {
+            document.removeEventListener('scroll', scrolled(page))
+        }
+    }, [])
     return (
         <div className="page-inner">
             <div className="home-inner">
