@@ -31,24 +31,26 @@ export default function SideBarNav(props) {
                     <span className="sidebar-nav-item-text" title="My Tasks">My Tasks</span>
                 </Link>
             </section>
-            <section className="sidebar-team-list">
-                {
-                    props.team?.map((member) => {
-                        return(
-                            <UserAvatar key={member.id} user={member} />
-                        )
-                    }) 
-                }
-            </section>
-            <section className="sidebar-project-list">
-                {
-                    props.projects?.map((project) => {
-                        return(
-                            <SidebarProjectItem key={project.id} project={project} />
-                        )
-                    }) 
-                }
-            </section>
+            <div className="scrollable">
+                <section className="sidebar-team-list">
+                    {
+                        props.team?.map((member) => {
+                            return(
+                                <UserAvatar key={member.id} user={member} />
+                            )
+                        }) 
+                    }
+                </section>
+                <section className="sidebar-project-list">
+                    {
+                        props.projects?.map((project) => {
+                            return(
+                                <SidebarProjectItem key={project.id} project={project} />
+                            )
+                        }) 
+                    }
+                </section>
+            </div>
             <section className="links">
                 <a href="https://github.com/jbubar" target="_blank">
                     <img src={window.githubURL} alt="Github icon that links to josh bubar's github profile"/>
