@@ -30,7 +30,7 @@ function UserTasks(props) {
                 <span className="column">Project</span>
                 <span className="column">Due date</span>
             </div>
-            <div className="projects-page-inner">
+            <div className="page-with-tasks-inner">
                     <div>
                         <div>
                 { props.tasks ? ( props.tasks.map(task => {

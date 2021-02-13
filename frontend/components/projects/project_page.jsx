@@ -9,7 +9,7 @@ export default function ProjectPage(props) {
     })
     return (
         <div>
-            <div className="projects-page-inner">
+            <div className="page-with-tasks-inner">
                 { props.sections ? props.sections.map(section => (
                     <Section section={section}/>
                 )) : (
