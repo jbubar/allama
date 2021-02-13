@@ -35,4 +35,9 @@ class Api::ProjectsController < ApplicationController
     @project.destroy
     render 'api/projects/show'
   end
+
+  private
+  def project_params
+    params.require(:project).permit(:name, :description, :due_date, :owner_id, :team_id)
+  end
 end
