@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { searchDB } from "../../../actions/search_actions";
 import { useClickOutside } from '../../../hooks/click_outside';
 import SearchDropDown from './search_dropdown'
+import { AiOutlineSearch } from 'react-icons/ai';
 
 function SearchComponent({ searchData, teamId, searchDB }) {
     const [showDropDown, setShowDropDown] = useState(false);
@@ -21,7 +22,7 @@ function SearchComponent({ searchData, teamId, searchDB }) {
                     className="nav-circle-item"
                     onChange={handleInput}
                 />
-                <span style={{fontFamily: "Arial, FontAwesome"}}>&#xF002;</span>
+                <span><AiOutlineSearch/></span>
             </div>
             {showDropDown && 
                 <div
