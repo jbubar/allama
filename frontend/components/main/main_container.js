@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
   currentUser: state.entities.users[state.session.currentUserId],
   showProjectModal: state.ui.projectModal.open,
   modalProjectId: state.ui.projectModal.projectId,
-  showProfileModal: true,
+  showSettingsModal: state.ui.settingsModal,
 });
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),

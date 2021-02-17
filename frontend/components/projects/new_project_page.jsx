@@ -44,7 +44,7 @@ function NewProjectPage(props) {
                         <input 
                             type="submit" 
                             value="Create project"
-                            className="new-proj-btn"
+                            className="new-proj-btn btn"
                             disabled={projectName.length > 0 ? false : true}
                         />
                     </label>

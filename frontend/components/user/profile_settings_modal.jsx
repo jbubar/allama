@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
 import UserAvatar from "../main/user_avatar";
 import {GrClose} from 'react-icons/gr';
+import { closeSettingsModal } from '../../actions/ui_actions';
 
 
-export default function ProfileSettingsModal(props) {
+function ProfileSettingsModal(props) {
+    const [fullName, setFullName] = useState(props.currentUser.fullName)
+    const [email, setEmail] = useState(props.currentUser.email)
     return (
         <div className="modal-background">
             <div className="modal-top-buffer"></div>
@@ -11,37 +15,40 @@ export default function ProfileSettingsModal(props) {
                 <div className="modal-container" >
                     <header className="modal-header">
                         <h2>My Profile Settings</h2>
-                        <div className="btn exit" onClick={()=>console.log('close!!!')}>
+                        <div className="btn exit" onClick={props.close}>
                             <GrClose className="close" />
                         </div>
                     </header>
-                     {/* <UserAvatar user={member} /> */}
                     <form onSubmit={(e)=>{e.preventDefault()}}>
+                        {/* <UserAvatar user={props.currentUser} /> */}
                         <label><p>Full Name</p>
                             <input
                                 type="text" 
-                                title="Project name" 
-                                // value={inputVal}
-                                // onChange={ e => {
-                                //     setInputVal(e.target.value)
-                                //     nameValue.current = e.target.value
-                                // }}
+                                title="Full Name" 
+                                value={fullName}
+                                onChange={ e => {
+                                    setFullName(e.target.value)
+                                }}
                                 // onBlur={updateProject('name', nameValue.current)}
                             />
                         </label>
                         <label><p>Email</p>
                             <input
                                 type="text" 
-                                title="Project name" 
-                                // value={inputVal}
-                                // onChange={ e => {
-                                //     setInputVal(e.target.value)
-                                //     nameValue.current = e.target.value
-                                // }}
+                                title="Email" 
+                                value={email}
+                                onChange={ e => {
+                                    setEmail(e.target.value)
+                                }}
                                 // onBlur={updateProject('name', nameValue.current)}
                             />
                         </label>
-                        <input type="submit" value="Save Changes"/>
+                        <input 
+                            type="submit" 
+                            value="Save Changes" 
+                            className="settings-btn btn"
+                            disabled={(email != props.currentUser.email || fullName != props.currentUser.fullName) ? false : true}
+                        />
                     </form>
                 </div>
             </div>
@@ -49,3 +56,11 @@ export default function ProfileSettingsModal(props) {
         </div>
     )
 }
+
+const mapStateToProps = (state) => ({
+    currentUser: state.entities.users[state.session.currentUserId],
+})
+const mapDispatchToProps = (dispatch) => ({
+    close: () => dispatch(closeSettingsModal()),
+})
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileSettingsModal)

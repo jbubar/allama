@@ -87,7 +87,7 @@ export default function TopBar(props) {
             ) : null }
             {visible && 
                 <div ref={ref}>
-                    <UserDropDown/>
+                    <UserDropDown close={() => setVisible(false)}/>
                 </div>
             }
         </nav>
