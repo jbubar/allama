@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Splash  = () => {
     return (
-        <div>
+        <div className="splash">
             <SplashNavContainer/>
             <div className='splash-page'>
                 <section className='splash-top-content'>

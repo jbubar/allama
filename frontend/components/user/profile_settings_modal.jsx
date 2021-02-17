@@ -8,6 +8,10 @@ import { closeSettingsModal } from '../../actions/ui_actions';
 function ProfileSettingsModal(props) {
     const [fullName, setFullName] = useState(props.currentUser.fullName)
     const [email, setEmail] = useState(props.currentUser.email)
+    function handleSubmit(e){
+        e.preventDefault();
+        props.close();
+    }
     return (
         <div className="modal-background">
             <div className="modal-top-buffer"></div>
@@ -19,7 +23,7 @@ function ProfileSettingsModal(props) {
                             <GrClose className="close" />
                         </div>
                     </header>
-                    <form onSubmit={(e)=>{e.preventDefault()}}>
+                    <form onSubmit={handleSubmit}>
                         {/* <UserAvatar user={props.currentUser} /> */}
                         <label><p>Full Name</p>
                             <input
