@@ -28,7 +28,7 @@ function EditProjectModal(props) {
     return (
         <div className="modal-background">
             <div className="modal-top-buffer"></div>
-            <div className="outer-modal-container" ref={ref}>
+            <div className="outer-modal-container relative" ref={ref}>
                 <div className="modal-container" >
                     <header className="modal-header">
                         <h2>Project details</h2>
