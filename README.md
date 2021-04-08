@@ -1,23 +1,25 @@
-# README
+## Welcome to my Asana clone!
+[demo site](https://allama.herokuapp.com/home)
 
-This is a clone of asana.com! It is also my first full-stack project!
+Allama is a clone of Asana, a project management application where you can create and manage tasks and projects.
+![Screen Shot 2021-04-08 at 12 13 22 AM](https://user-images.githubusercontent.com/53061723/113983837-3e250400-97ff-11eb-97e7-33b0a01d3f96.png)
 
-Things you may want to cover:
+## Technologies:
+Frontend: HTML5, SCSS, React, Redux
+Backend: Ruby on Rails, Jbuilder
+Database: Postgresql
 
-* Ruby version
+## Features
+Editable, and assignable tasks
+![Screen Shot 2021-04-08 at 12 20 47 AM](https://user-images.githubusercontent.com/53061723/113984740-4762a080-9800-11eb-91d1-064f645dbbed.png)
 
-* System dependencies
+Project creation
+![Screen Shot 2021-04-08 at 12 31 56 AM](https://user-images.githubusercontent.com/53061723/113986202-d58b5680-9801-11eb-80fc-2c60267d69a3.png)
 
-* Configuration
+Monitoring teammates tasks
+![Screen Shot 2021-04-08 at 12 32 45 AM](https://user-images.githubusercontent.com/53061723/113986290-f2c02500-9801-11eb-9a8c-ee516fba4505.png)
 
-* Database creation
+## Future Features
+- Drag and drop
+- Inviting friends
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
